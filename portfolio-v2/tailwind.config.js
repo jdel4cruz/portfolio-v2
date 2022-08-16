@@ -18,6 +18,10 @@ module.exports = {
       fontFamily: {
         sans: ["Lato", ...defaultTheme.fontFamily.sans],
       },
+      width: {
+        220: "55rem",
+        240: "60rem",
+      },
     },
     colors: {
       primary: "#395BD9",
@@ -33,6 +37,7 @@ module.exports = {
       black_25: "#9C9CA0",
       black_10: "#CFCFD1",
       black_5: "#E1E1E3",
+      white: "#ffffff",
     },
   },
   plugins: [],

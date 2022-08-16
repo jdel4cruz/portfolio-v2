@@ -11,15 +11,15 @@ function About() {
       </div>
       <div className="w-9/12 max-w-7xl flex flex-col gap-8">
         <p>
-          My name is <strong>John</strong> and I am a
-          <strong>former engineer</strong> who is now a
+          My name is <strong>John</strong> and I am a{" "}
+          <strong>former engineer</strong> who is now a{" "}
           <strong>self-taught web developer</strong>. Back in May of 2020, I
           decided to step away from engineering in order to find a career path
           that was more for me. After exploring a variety of interests, I landed
           on web development and I’ve been hooked ever since.
         </p>
         <p>
-          As of late, I’ve begun focusing more on studying
+          As of late, I’ve begun focusing more on studying{" "}
           <strong>UI/UX design</strong> in order to make better use of the
           various technologies I’ve learned over the past year. Listed below are
           some of the technologies that I’ve used most recently.

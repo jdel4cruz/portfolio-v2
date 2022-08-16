@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Header() {
   return (
-    <div className="fixed top-0 left-0 w-screen flex justify-between p-8 bg-[#ffffff]">
+    <div className="fixed top-0 left-0 w-screen flex justify-between p-8 bg-[#ffffff] z-50">
       <div>Logo placeholder</div>
       <ul className="flex gap-8">
         <li>

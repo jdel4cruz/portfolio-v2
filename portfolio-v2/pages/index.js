@@ -2,10 +2,11 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Main from "../components/Main";
 import About from "../components/About";
+import Projects from "../components/Projects";
 
 export default function Home() {
   return (
-    <div className="text-">
+    <div>
       <Head>
         <title>John De La Cruz - A Front-end Dev</title>
         <meta name="description" content="John De La Cruz's portfolio site" />
@@ -22,6 +23,7 @@ export default function Home() {
       <Header />
       <Main />
       <About />
+      <Projects />
     </div>
   );
 }
