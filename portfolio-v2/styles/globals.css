@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-[#ffffff] text-[#6c6c6c];
+    @apply bg-[#ffffff] text-black_75;
   }
 
   h1,
@@ -17,18 +17,18 @@
   }
 
   h1 {
-    @apply text-7xl;
+    @apply text-h1;
   }
 
   h2 {
-    @apply text-5xl;
+    @apply text-h2;
   }
 
   p {
-    @apply text-3xl;
+    @apply text-p;
   }
 
   p strong {
-    @apply text-[#5977C9];
+    @apply text-primary;
   }
 }

@@ -7,12 +7,20 @@ import fiverr from "../../assets/svgs/icons8-fiverr.svg";
 
 function Socials() {
   return (
-    <div className="flex mt-8 gap-8 h-16">
-      <Image src={github} height={48} width={48} />
-      <Image src={linkedin} height={48} width={48} />
-      <Image src={upwork} height={48} width={48} />
-      <Image src={fiverr} height={48} width={48} />
-    </div>
+    <ul className="flex mt-16 gap-8 h-16">
+      <li className="h-full aspect-square relative">
+        <Image src={github} layout="fill" objectFit="contain" priority />
+      </li>
+      <li className="h-full aspect-square relative">
+        <Image src={linkedin} layout="fill" objectFit="contain" priority />
+      </li>
+      <li className="h-full aspect-square relative">
+        <Image src={upwork} layout="fill" objectFit="contain" priority />
+      </li>
+      <li className="h-full aspect-square relative">
+        <Image src={fiverr} layout="fill" objectFit="contain" priority />
+      </li>
+    </ul>
   );
 }
 
