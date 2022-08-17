@@ -27,7 +27,7 @@ function ProjectPreview({ isLeft, image, title, description, route }) {
             isLeft ? "left-16" : "right-16"
           } flex flex-col ${isLeft ? "items-start" : "items-end"} z-20 gap-4`}
         >
-          <h3 className="text-white leading-8">{title}</h3>
+          <h2 className="text-white leading-8">{title}</h2>
           <p className="text-white">{description}</p>
           <Link href={route}>
             <Button>Learn More</Button>

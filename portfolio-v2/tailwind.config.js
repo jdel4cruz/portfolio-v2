@@ -18,7 +18,12 @@ module.exports = {
         h2_xl: "75px",
         h3_xl: "57px",
         p_xl: "42px",
-        background_xl: "318px",
+        background_xl: "239px",
+        h1_md: "57px",
+        h2_md: "39px",
+        h3_md: "27px",
+        p_md: "23px",
+        background_md: "82px",
       },
       fontFamily: {
         sans: ["Lato", ...defaultTheme.fontFamily.sans],
@@ -41,6 +46,7 @@ module.exports = {
         "3xl": "2400px",
       },
     },
+
     colors: {
       primary: "#395BD9",
       primary_tone: "#16308C",

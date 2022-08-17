@@ -1,15 +1,15 @@
 import React from "react";
-
+import { useState } from "react";
 const techItem =
-  "before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-1/4 before:aspect-square before:bg-primary relative items-center text-p text-black_75 pl-6 w-1/4";
+  "before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-1/4 before:aspect-square before:bg-primary relative items-center text-xs leading-10 md:text-base 3xl:text-p text-black_75 pl-6 w-1/4";
 
 function About() {
   return (
     <div className="w-screen min-h-screen flex flex-col items-center 3xl:justify-center  relative gap-12">
-      <div className=" text-background 3xl:text-background_xl text-primary_tint leading-tight -z-10 mb-8">
+      <div className="md:text-background_md lg:text-background 3xl:text-background_xl text-primary_tint leading-tight -z-10 mb-8">
         ABOUT
       </div>
-      <div className="max-w-7xl 3xl:max-w-3xl flex flex-col gap-8">
+      <div className="w-3/4 3xl:max-w-3xl flex flex-col gap-8">
         <p>
           My name is <strong>John</strong> and I am a{" "}
           <strong>former engineer</strong> who is now a{" "}

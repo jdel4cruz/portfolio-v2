@@ -17,19 +17,19 @@
   }
 
   h1 {
-    @apply text-h1 3xl:text-h1_xl;
+    @apply md:text-h1_md lg:text-h1 3xl:text-h1_xl;
   }
 
   h2 {
-    @apply text-h2 3xl:text-h2_xl;
+    @apply md:text-h2_md lg:text-h2 3xl:text-h2_xl;
   }
 
   h3 {
-    @apply text-h3 3xl:text-h3_xl;
+    @apply md:text-h3_md lg:text-h3 3xl:text-h3_xl;
   }
 
   p {
-    @apply text-p 3xl:text-p_xl;
+    @apply md:text-p_md lg:text-p 3xl:text-p_xl;
   }
 
   p strong {
