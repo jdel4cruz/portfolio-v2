@@ -7,7 +7,7 @@ import fiverr from "../../assets/svgs/icons8-fiverr.svg";
 
 function Socials() {
   return (
-    <ul className="flex mt-16 gap-8 h-16">
+    <ul className="flex gap-8 justify-center h-16 3xl:h-24 w-fit">
       <li className="h-full aspect-square relative">
         <Image src={github} layout="fill" objectFit="contain" priority />
       </li>

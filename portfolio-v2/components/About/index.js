@@ -5,11 +5,11 @@ const techItem =
 
 function About() {
   return (
-    <div className="w-screen min-h-screen flex items-center justify-center relative">
-      <div className="absolute -top-1/4 left-32 text-background text-primary_tint_10 -z-10">
+    <div className="w-screen min-h-screen flex flex-col items-center 3xl:justify-center  relative gap-12">
+      <div className=" text-background 3xl:text-background_xl text-primary_tint leading-tight -z-10 mb-8">
         ABOUT
       </div>
-      <div className="w-9/12 max-w-7xl flex flex-col gap-8">
+      <div className="max-w-7xl 3xl:max-w-3xl flex flex-col gap-8">
         <p>
           My name is <strong>John</strong> and I am a{" "}
           <strong>former engineer</strong> who is now a{" "}

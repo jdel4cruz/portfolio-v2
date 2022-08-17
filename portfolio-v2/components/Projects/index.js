@@ -4,8 +4,11 @@ import testImg from "../../assets/project_imgs/PokeApp.jpg";
 
 function Projects() {
   return (
-    <div className="w-screen min-h-screen flex items-center justify-center py-16">
-      <div className="w-9/12 flex flex-col gap-8 relative ">
+    <div className="w-screen min-h-screen flex flex-col items-center gap-20 pb-16">
+      <div className=" text-background 3xl:text-background_xl text-primary_tint leading-tight -z-10">
+        PROJECTS
+      </div>
+      <div className="w-9/12 flex flex-col gap-20 relative ">
         <ProjectPreview
           isLeft={false}
           image={testImg}

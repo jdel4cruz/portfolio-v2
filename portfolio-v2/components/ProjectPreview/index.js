@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/dist/client/image";
+import Button from "../Button";
 import Link from "next/dist/client/link";
 
 function ProjectPreview({ isLeft, image, title, description, route }) {
@@ -7,31 +8,29 @@ function ProjectPreview({ isLeft, image, title, description, route }) {
     <div
       className={`self-${
         isLeft ? "start" : "end"
-      } w-full aspect-video relative  overflow-hidden`}
+      } w-full aspect-video relative drop-shadow-projectPreview`}
     >
       <div
-        className={`absolute bottom-12 ${
-          isLeft ? "left-12" : "right-12"
-        } h-5/6 w-5/6 bg-secondary -z-10`}
+        className={`absolute bottom-40 ${
+          isLeft ? "left-24" : "right-24"
+        } h-3/4 w-3/4 bg-secondary -z-10`}
       />
       <div
-        className={`absolute bottom-0 ${
+        className={`absolute bottom-16 ${
           isLeft ? "left-0" : "right-0"
-        } h-4/5 w-4/5`}
+        } h-3/4 w-3/4 `}
       >
-        <div className="absolute bg-black opacity-75 z-10 w-full h-full" />
+        <div className="absolute bg-black opacity-75 z-10 w-full h-full " />
         <Image src={image} layout="fill" objectFit="contain" priority />
         <div
           className={`absolute bottom-16 ${
             isLeft ? "left-16" : "right-16"
           } flex flex-col ${isLeft ? "items-start" : "items-end"} z-20 gap-4`}
         >
-          <h3 className="text-white text-h1 leading-8">{title}</h3>
-          <h4 className="text-white text-p ">{description}</h4>
+          <h3 className="text-white leading-8">{title}</h3>
+          <p className="text-white">{description}</p>
           <Link href={route}>
-            <button className="bg-secondary rounded-lg w-52 h-20 text-p text-white px-17 ">
-              Learn More
-            </button>
+            <Button>Learn More</Button>
           </Link>
         </div>
       </div>
