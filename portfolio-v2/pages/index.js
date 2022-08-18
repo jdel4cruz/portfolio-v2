@@ -12,7 +12,6 @@ import useScreenSize from "../Hooks/useScreenSize";
 
 export default function Home() {
   const screenSize = useScreenSize();
-  console.log(screenSize);
 
   return (
     <div>
@@ -31,7 +30,7 @@ export default function Home() {
       </Head>
       <Header screenSize={screenSize} />
       <Main />
-      <About />
+      <About screenSize={screenSize} />
       <Projects />
       <Contact />
     </div>

@@ -24,6 +24,11 @@ module.exports = {
         h3_md: "27px",
         p_md: "23px",
         background_md: "82px",
+        h1_sm: "27px",
+        h2_sm: "19px",
+        h3_sm: "16px",
+        p_sm: "16px",
+        background_sm: "57px",
       },
       fontFamily: {
         sans: ["Lato", ...defaultTheme.fontFamily.sans],

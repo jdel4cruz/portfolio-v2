@@ -5,7 +5,7 @@ import Socials from "../Socials";
 function Contact() {
   return (
     <div className="w-screen min-h-screen flex flex-col justify-center items-center">
-      <div className="md:text-background_md lg:text-background 3xl:text-background_xl text-primary_tone leading-tight -z-10 pb-4">
+      <div className="text-background_sm md:text-background_md lg:text-background 3xl:text-background_xl text-primary_tone leading-tight -z-10 pb-4">
         CONTACT
       </div>
       <div className="flex flex-col w-6/12 items-center justify-center text-center gap-16">
