@@ -3,6 +3,9 @@ import Image from "next/dist/client/image";
 import LinkButton from "../LinkButton";
 import Link from "next/dist/client/link";
 
+import Github from "../../assets/svgs/github_white.svg";
+import ExternalLink from "../../assets/svgs/box-arrow-up-right_white.svg";
+
 function ProjectPreview({ isLeft, image, title, description, route }) {
   return (
     <Link href={route}>
@@ -35,6 +38,18 @@ function ProjectPreview({ isLeft, image, title, description, route }) {
           </p>
           <div className="flex justify-center items-center bg-secondary rounded-lg px-5 py-4 text-[1rem] md:text-p_md lg:text-p text-white font-bold">
             Learn More
+          </div>
+        </div>
+        <div
+          className={`absolute top-8 ${
+            isLeft ? "right-8" : "left-8"
+          } flex flex-col gap-8`}
+        >
+          <div className="w-16 aspect-square relative">
+            <Image src={Github} layout="fill" objectFit="contain" />
+          </div>
+          <div className="w-16 aspect-square relative">
+            <Image src={ExternalLink} layout="fill" objectFit="contain" />
           </div>
         </div>
       </li>
