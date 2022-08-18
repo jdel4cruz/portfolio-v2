@@ -2,7 +2,10 @@ import React from "react";
 import Socials from "../Socials";
 function Main() {
   return (
-    <div className="w-screen min-h-screen flex items-center justify-center">
+    <div
+      className="w-screen min-h-screen flex items-center justify-center"
+      id="home"
+    >
       <div className="w-5/6 xl:w-8/12 flex flex-col justify-center items-center lg:items-start">
         <h1 className="text-primary_tone leading-tight">John De La Cruz</h1>
         <h2>Front-end Developer & Designer</h2>

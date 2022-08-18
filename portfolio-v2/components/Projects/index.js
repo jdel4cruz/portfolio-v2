@@ -4,7 +4,10 @@ import testImg from "../../assets/project_imgs/PokeApp.jpg";
 
 function Projects() {
   return (
-    <div className="w-screen min-h-screen flex flex-col items-center pb-32">
+    <div
+      className="w-screen min-h-screen flex flex-col items-center pb-32"
+      id="projects"
+    >
       <div className="text-background_sm md:text-background_md lg:text-background 3xl:text-background_xl text-primary_tone leading-tight -z-10 mb-24">
         PROJECTS
       </div>

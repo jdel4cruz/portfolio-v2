@@ -6,7 +6,10 @@ const techItem =
 function About({ screenSize }) {
   console.log(screenSize);
   return (
-    <div className="w-screen min-h-[75vh] lg:min-h-screen flex flex-col items-center 3xl:justify-center relative gap-12 md: mb-16">
+    <div
+      className="w-screen min-h-[75vh] lg:min-h-screen flex flex-col items-center lg:justify-center relative gap-12 md: mb-16"
+      id="about"
+    >
       <div className="text-background_sm md:text-background_md lg:text-background 3xl:text-background_xl text-primary_tone leading-tight -z-10 mb-8">
         ABOUT
       </div>

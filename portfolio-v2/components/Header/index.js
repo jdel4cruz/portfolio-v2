@@ -7,7 +7,7 @@ import NavBar from "../NavBar";
 
 function Header({ screenSize }) {
   return (
-    <div className="fixed top-0 w-screen flex justify-between px-8 md:px-16 py-8 bg-[rgba(255,255,255,0.1)] backdrop-blur z-50">
+    <div className="fixed top-0 w-screen flex justify-between items-center px-8 md:px-16 py-8 bg-[rgba(255,255,255,0.1)] backdrop-blur z-50">
       <div className="h-16 sm:h-20 aspect-[300/129] relative">
         <Image
           src={Logo}
