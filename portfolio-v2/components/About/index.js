@@ -6,7 +6,7 @@ const techItem =
 function About() {
   return (
     <div className="w-screen min-h-screen flex flex-col items-center 3xl:justify-center  relative gap-12">
-      <div className="md:text-background_md lg:text-background 3xl:text-background_xl text-primary_tint leading-tight -z-10 mb-8">
+      <div className="md:text-background_md lg:text-background 3xl:text-background_xl text-primary_tone leading-tight -z-10 mb-8">
         ABOUT
       </div>
       <div className="w-3/4 3xl:max-w-3xl flex flex-col gap-8">

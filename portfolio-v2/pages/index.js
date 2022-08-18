@@ -1,11 +1,19 @@
 import Head from "next/head";
+
+// Compopnents
 import Header from "../components/Header";
 import Main from "../components/Main";
 import About from "../components/About";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 
+// Hooks
+import useScreenSize from "../Hooks/useScreenSize";
+
 export default function Home() {
+  const screenSize = useScreenSize();
+  console.log(screenSize);
+
   return (
     <div>
       <Head>
@@ -21,7 +29,7 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <Header />
+      <Header screenSize={screenSize} />
       <Main />
       <About />
       <Projects />

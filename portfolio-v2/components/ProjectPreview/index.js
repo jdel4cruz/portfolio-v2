@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/dist/client/image";
-import Button from "../Button";
+import LinkButton from "../LinkButton";
 import Link from "next/dist/client/link";
 
 function ProjectPreview({ isLeft, image, title, description, route }) {
@@ -21,7 +21,7 @@ function ProjectPreview({ isLeft, image, title, description, route }) {
         } h-3/4 w-3/4 `}
       >
         <div className="absolute bg-black opacity-75 z-10 w-full h-full " />
-        <Image src={image} layout="fill" objectFit="contain" priority />
+        <Image src={image} layout="fill" objectFit="contain" />
         <div
           className={`absolute bottom-16 ${
             isLeft ? "left-16" : "right-16"
@@ -30,7 +30,7 @@ function ProjectPreview({ isLeft, image, title, description, route }) {
           <h2 className="text-white leading-8">{title}</h2>
           <p className="text-white">{description}</p>
           <Link href={route}>
-            <Button>Learn More</Button>
+            <LinkButton>Learn More</LinkButton>
           </Link>
         </div>
       </div>

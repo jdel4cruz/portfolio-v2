@@ -13,7 +13,7 @@ module.exports = {
         h2: "50px",
         h3: "38px",
         p: "28px",
-        background: "212px",
+        background: "159px",
         h1_xl: "134px",
         h2_xl: "75px",
         h3_xl: "57px",

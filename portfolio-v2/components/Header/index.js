@@ -1,38 +1,41 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+import Logo from "../../assets/svgs/Logo2.svg";
 
-function Header() {
+import NavBar from "../NavBar";
+
+function Header({ screenSize }) {
   return (
-    <div className="fixed top-0 left-0 w-screen flex justify-between py-8 px-16 bg-[#ffffff] z-50">
-      <div>Logo placeholder</div>
-      <ul className="flex gap-8 lg:gap-16">
-        <li>
-          <Link href="#home">
-            <a className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary">
-              Home
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="#about">
-            <a className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary">
-              About
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="#projects">
-            <a className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary">
-              Projects
-            </a>
-          </Link>
-        </li>
-        <li>
-          <button className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary">
-            Contact
-          </button>
-        </li>
-      </ul>
+    <div className="fixed top-0 w-screen flex justify-between px-8 md:px-16 py-8 bg-[rgba(255,255,255,0.1)] backdrop-blur z-50">
+      <div className="h-20 aspect-[300/129] relative">
+        <Image
+          src={Logo}
+          layout="fill"
+          objectFit="contain"
+          style={{ fill: "#395BD9" }}
+        ></Image>
+      </div>
+
+      {screenSize[0] >= 768 ? (
+        <NavBar />
+      ) : (
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="64"
+            height="64"
+            fill="#395BD9"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </div>
+      )}
     </div>
   );
 }
