@@ -6,11 +6,11 @@ const techItem =
 function About({ screenSize }) {
   console.log(screenSize);
   return (
-    <div className="w-screen min-h-screen flex flex-col items-center 3xl:justify-center  relative gap-12">
+    <div className="w-screen min-h-[75vh] lg:min-h-screen flex flex-col items-center 3xl:justify-center relative gap-12 md: mb-16">
       <div className="text-background_sm md:text-background_md lg:text-background 3xl:text-background_xl text-primary_tone leading-tight -z-10 mb-8">
         ABOUT
       </div>
-      <div className="w-9/12 md:w-5/6 lg:w-9/12 3xl:max-w-3xl flex flex-col  gap-8">
+      <div className="w-5/6 xl:w-8/12 3xl:max-w-3xl flex flex-col  gap-8">
         <p>
           My name is <strong>John</strong> and I am a{" "}
           <strong>former engineer</strong> who is now a{" "}
@@ -40,7 +40,7 @@ function About({ screenSize }) {
               <li className={techItem}>ExpressJS</li>
             </ul>
           </div>
-        ) : screenSize[0] > 640 ? (
+        ) : screenSize[0] >= 640 ? (
           <div>
             <ul className="flex justify-center">
               <li className={techItem}>NextJS</li>

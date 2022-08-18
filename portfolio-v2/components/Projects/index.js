@@ -4,8 +4,8 @@ import testImg from "../../assets/project_imgs/PokeApp.jpg";
 
 function Projects() {
   return (
-    <div className="w-screen min-h-screen flex flex-col items-center gap-16 pb-16">
-      <div className="text-background_sm md:text-background_md lg:text-background 3xl:text-background_xl text-primary_tone leading-tight -z-10">
+    <div className="w-screen min-h-screen flex flex-col items-center pb-32">
+      <div className="text-background_sm md:text-background_md lg:text-background 3xl:text-background_xl text-primary_tone leading-tight -z-10 mb-24">
         PROJECTS
       </div>
       <ul className="w-9/12 flex flex-col items-center gap-16 relative ">

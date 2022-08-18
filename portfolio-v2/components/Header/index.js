@@ -17,7 +17,7 @@ function Header({ screenSize }) {
         ></Image>
       </div>
 
-      {screenSize[0] >= 768 ? (
+      {screenSize[0] >= 1024 ? (
         <NavBar />
       ) : (
         <div>

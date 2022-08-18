@@ -28,7 +28,7 @@ module.exports = {
         h2_sm: "19px",
         h3_sm: "16px",
         p_sm: "16px",
-        background_sm: "57px",
+        background_sm: "39px",
       },
       fontFamily: {
         sans: ["Lato", ...defaultTheme.fontFamily.sans],
