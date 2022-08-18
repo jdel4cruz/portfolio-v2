@@ -5,36 +5,40 @@ import Link from "next/dist/client/link";
 
 function ProjectPreview({ isLeft, image, title, description, route }) {
   return (
-    <div
-      className={`self-${
-        isLeft ? "start" : "end"
-      } w-full aspect-video relative drop-shadow-projectPreview`}
-    >
-      <div
-        className={`absolute bottom-40 ${
-          isLeft ? "left-24" : "right-24"
-        } h-3/4 w-3/4 bg-secondary -z-10`}
-      />
-      <div
-        className={`absolute bottom-16 ${
-          isLeft ? "left-0" : "right-0"
-        } h-3/4 w-3/4 `}
+    <Link href={route}>
+      <li
+        className={`w-5/6 md:w-[600px] xl:w-[960px] h-[300px] xl:h-[480px] ${
+          isLeft
+            ? "md:-translate-x-12 xl:-translate-x-20"
+            : "md:translate-x-12 xl:translate-x-20"
+        } drop-shadow-projectPreview md:m-16 relative`}
       >
-        <div className="absolute bg-black opacity-75 z-10 w-full h-full " />
-        <Image src={image} layout="fill" objectFit="contain" />
         <div
-          className={`absolute bottom-16 ${
-            isLeft ? "left-16" : "right-16"
-          } flex flex-col ${isLeft ? "items-start" : "items-end"} z-20 gap-4`}
+          className={`absolute w-full h-full ${
+            isLeft
+              ? "translate-x-8 md:translate-x-12 xl:translate-x-16"
+              : "-translate-x-8 md:-translate-x-12 xl:-translate-x-16"
+          } -translate-y-8 md:-translate-y-12 xl:-translate-y-16 bg-secondary`}
+        />
+        <Image src={image} layout="fill" objectFit="cover" />
+        <div className="w-full h-full bg-black opacity-75 "></div>
+        <div
+          className={`absolute flex flex-col ${
+            isLeft ? "items-start" : "items-end"
+          } bottom-8 ${isLeft ? "left-8" : "right-8"} text-white`}
         >
-          <h2 className="text-white leading-8">{title}</h2>
-          <p className="text-white">{description}</p>
-          <Link href={route}>
-            <LinkButton>Learn More</LinkButton>
-          </Link>
+          <h2 className=" text-[40px] md:text-h2_md lg:text-h2 leading-10 lg:leading-snug">
+            {title}
+          </h2>
+          <p className="mb-8 text-[20px] md:text-p_md lg:text-p">
+            {description}
+          </p>
+          <div className="flex justify-center items-center bg-secondary rounded-xl px-6 py-4 text-[20px] md:text-p_md lg:text-p text-white">
+            Learn More
+          </div>
         </div>
-      </div>
-    </div>
+      </li>
+    </Link>
   );
 }
 

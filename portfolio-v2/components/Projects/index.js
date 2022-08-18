@@ -8,29 +8,29 @@ function Projects() {
       <div className="text-background_sm md:text-background_md lg:text-background 3xl:text-background_xl text-primary_tone leading-tight -z-10">
         PROJECTS
       </div>
-      <div className="w-9/12 flex flex-col gap-20 relative ">
+      <ul className="w-9/12 flex flex-col items-center gap-16 relative ">
         <ProjectPreview
           isLeft={false}
           image={testImg}
           title="Portfolio"
           description="Focused on Design"
-          route="/"
+          route="/works/portfolio"
         />
         <ProjectPreview
           isLeft={true}
           image={testImg}
           title="OceanSide"
           description="A Cafe by the Sea"
-          route="/"
+          route="/works/oceanside"
         />
         <ProjectPreview
           isLeft={false}
           image={testImg}
           title="PokeApp"
-          description="A Pokemon Database App"
-          route="/"
+          description="A Database App"
+          route="/works/pokeapp"
         />
-      </div>
+      </ul>
     </div>
   );
 }

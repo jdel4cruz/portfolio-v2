@@ -50,6 +50,9 @@ module.exports = {
       screens: {
         "3xl": "2400px",
       },
+      spacing: {
+        "1/8": "12.5%",
+      },
     },
 
     colors: {
