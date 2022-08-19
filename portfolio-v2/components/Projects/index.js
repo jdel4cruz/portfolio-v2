@@ -1,6 +1,8 @@
 import React from "react";
 import ProjectPreview from "../ProjectPreview";
-import testImg from "../../assets/project_imgs/PokeApp.jpg";
+import PokeApp from "../../assets/project_imgs/PokeApp.jpg";
+import OceanSide from "../../assets/project_imgs/OceanSide.jpg";
+import Portfolio from "../../assets/project_imgs/Portfolio.jpg";
 
 function Projects() {
   return (
@@ -14,24 +16,29 @@ function Projects() {
       <ul className="w-9/12 flex flex-col items-center gap-16 relative ">
         <ProjectPreview
           isLeft={false}
-          image={testImg}
+          image={Portfolio}
           title="Portfolio"
           description="Focused on Design"
-          route="/works/portfolio"
+          route="/portfolio"
+          githubURL="https://github.com/jdel4cruz/portfolio-v2"
         />
         <ProjectPreview
           isLeft={true}
-          image={testImg}
+          image={OceanSide}
           title="OceanSide"
           description="A Cafe by the Sea"
-          route="/works/oceanside"
+          route="/oceanside"
+          githubURL="https://github.com/jdel4cruz/OceanSide"
+          projectURL="https://clever-sopapillas-25f3d4.netlify.app/"
         />
         <ProjectPreview
           isLeft={false}
-          image={testImg}
+          image={PokeApp}
           title="PokeApp"
           description="A Database App"
-          route="/works/pokeapp"
+          route="/pokeapp"
+          githubURL="https://github.com/jdel4cruz/PokeApp"
+          projectURL="https://animated-sherbet-32d7c9.netlify.app/"
         />
       </ul>
     </div>

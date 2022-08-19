@@ -9,10 +9,14 @@ function Socials() {
   return (
     <ul className="flex gap-8  h-8 md:h-16 lg:h-20 3xl:h-24">
       <li className=" h-8 md:h-16 lg:h-20 3xl:h-24 aspect-square relative">
-        <Image src={github} layout="fill" objectFit="contain" />
+        <a href="https://github.com/jdel4cruz">
+          <Image src={github} layout="fill" objectFit="contain" />
+        </a>
       </li>
       <li className=" h-8 md:h-16 lg:h-20 3xl:h-24 aspect-square relative">
-        <Image src={linkedin} layout="fill" objectFit="contain" />
+        <a href="https://www.linkedin.com/in/john-de-la-cruz-160bb045/">
+          <Image src={linkedin} layout="fill" objectFit="contain" />
+        </a>
       </li>
       <li className=" h-8 md:h-16 lg:h-20 3xl:h-24 aspect-square relative">
         <Image src={upwork} layout="fill" objectFit="contain" />
