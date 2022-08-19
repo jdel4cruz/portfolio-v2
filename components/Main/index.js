@@ -12,9 +12,9 @@ function Main() {
         <p className="my-8 leading-loose xl:mb-16">
           I focus on <strong>Front-end development</strong> and{" "}
           <strong>UI/UX design</strong>, with a side of Back-end development in
-          order to understand how everything fits together. I look to take my{" "}
-          <strong>client's visions</strong> and create immersive digital
-          experiences. Currently open to freelance opportunities.
+          order to understand how everything fits together. My goal is to take
+          my <strong>client's visions</strong> and use my skills to make them a
+          reality. Currently open to freelance opportunities.
         </p>
         <Socials />
       </div>
