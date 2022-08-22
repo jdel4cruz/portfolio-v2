@@ -3,7 +3,7 @@ import Socials from "../Socials";
 function Main() {
   return (
     <div
-      className="w-screen min-h-screen flex items-center justify-center"
+      className="w-screen max-w-full min-h-screen flex items-center justify-center"
       id="home"
     >
       <div className="w-5/6 xl:w-8/12 flex flex-col justify-center items-center lg:items-start">

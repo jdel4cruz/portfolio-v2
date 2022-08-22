@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Head from "next/head";
 
 // Compopnents
@@ -6,12 +8,14 @@ import Main from "../components/Main";
 import About from "../components/About";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
+import ContactModal from "../components/ContactModal";
 
 // Hooks
 import useScreenSize from "../Hooks/useScreenSize";
 
 export default function Home() {
   const screenSize = useScreenSize();
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
     <div>
@@ -28,7 +32,8 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <Header screenSize={screenSize} />
+      <ContactModal isOpen={isContactOpen} setIsOpen={setIsContactOpen} />
+      <Header screenSize={screenSize} setIsContactOpen={setIsContactOpen} />
       <Main />
       <About screenSize={screenSize} />
       <Projects />

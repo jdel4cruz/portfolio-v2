@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-function NavBar() {
+function NavBar({ setIsContactOpen }) {
   return (
     <ul className="flex gap-8 items-center lg:gap-16">
       <li>
@@ -26,7 +26,10 @@ function NavBar() {
         </Link>
       </li>
       <li>
-        <button className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary">
+        <button
+          className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary"
+          onClick={() => setIsContactOpen(true)}
+        >
           Contact
         </button>
       </li>
