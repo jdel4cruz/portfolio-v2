@@ -18,12 +18,12 @@ function Socials() {
           <Image src={linkedin} layout="fill" objectFit="contain" />
         </a>
       </li>
-      <li className=" h-8 md:h-16 lg:h-20 3xl:h-24 aspect-square relative">
+      {/* <li className=" h-8 md:h-16 lg:h-20 3xl:h-24 aspect-square relative">
         <Image src={upwork} layout="fill" objectFit="contain" />
       </li>
       <li className=" h-8 md:h-16 lg:h-20 3xl:h-24 aspect-square relative">
         <Image src={fiverr} layout="fill" objectFit="contain" />
-      </li>
+      </li> */}
     </ul>
   );
 }
