@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, createContext } from "react";
 
 import Head from "next/head";
 
@@ -13,12 +13,15 @@ import ContactModal from "../components/ContactModal";
 // Hooks
 import useScreenSize from "../Hooks/useScreenSize";
 
+// Contexts
+import ViewProvider from "../Contexts/ViewContext";
+
 export default function Home() {
   const screenSize = useScreenSize();
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
-    <div>
+    <>
       <Head>
         <title>John De La Cruz - A Front-end Dev</title>
         <meta name="description" content="John De La Cruz's portfolio site" />
@@ -32,12 +35,14 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <ContactModal isOpen={isContactOpen} setIsOpen={setIsContactOpen} />
-      <Header screenSize={screenSize} setIsContactOpen={setIsContactOpen} />
-      <Main />
-      <About screenSize={screenSize} />
-      <Projects />
-      <Contact />
-    </div>
+      <ViewProvider>
+        <ContactModal isOpen={isContactOpen} setIsOpen={setIsContactOpen} />
+        <Header screenSize={screenSize} setIsContactOpen={setIsContactOpen} />
+        <Main />
+        <About screenSize={screenSize} />
+        <Projects />
+        <Contact />
+      </ViewProvider>
+    </>
   );
 }

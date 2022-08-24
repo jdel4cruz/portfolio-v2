@@ -17,6 +17,10 @@ function Main() {
           reality. Currently open to freelance opportunities.
         </p>
         <Socials />
+        <p className="mt-16 text-primary_tint">
+          NOTE: This portfolio is current a work in progress, so some features
+          may not work as intended. Sorry!
+        </p>
       </div>
     </div>
   );
