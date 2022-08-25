@@ -9,6 +9,7 @@ import About from "../components/About";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import ContactModal from "../components/ContactModal";
+import NavMenu from "../components/NavMenu";
 
 // Hooks
 import useScreenSize from "../Hooks/useScreenSize";
@@ -22,6 +23,7 @@ export const useViewContext = () => {
 export default function Home() {
   const screenSize = useScreenSize();
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
   const [isInView, setIsInView] = useState("home");
 
   const refs = {};
@@ -82,8 +84,19 @@ export default function Home() {
         />
       </Head>
       <ViewContext.Provider value={{ isInView, setIsInView }}>
+        {screenSize[0] < 1024 && (
+          <NavMenu
+            isOpen={isNavMenuOpen}
+            setIsOpen={setIsNavMenuOpen}
+            setIsContactOpen={setIsContactOpen}
+          />
+        )}
         <ContactModal isOpen={isContactOpen} setIsOpen={setIsContactOpen} />
-        <Header screenSize={screenSize} setIsContactOpen={setIsContactOpen} />
+        <Header
+          screenSize={screenSize}
+          setIsContactOpen={setIsContactOpen}
+          setIsNavMenuOpen={setIsNavMenuOpen}
+        />
         <Main ref={homeRef} />
         <About screenSize={screenSize} ref={aboutRef} />
         <Projects ref={projectsRef} />

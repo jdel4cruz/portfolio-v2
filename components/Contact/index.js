@@ -3,8 +3,6 @@ import ContactButton from "../ContactButton";
 import Socials from "../Socials";
 
 const Contact = React.forwardRef(({ setIsContactOpen }, ref) => {
-  console.log(setIsContactOpen);
-
   return (
     <div
       className="w-screen max-w-full min-h-[75vw] lg:min-h-screen flex flex-col justify-center items-center pb-16 lg:pb-0"

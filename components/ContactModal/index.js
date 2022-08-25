@@ -1,8 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import Button from "../ContactButton";
-
 function ContactModal({ isOpen, setIsOpen }) {
   const handleSubmit = (e) => {
     e.preventDefault();

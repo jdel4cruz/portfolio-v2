@@ -4,7 +4,7 @@ import Logo from "../../assets/svgs/Logo2.svg";
 
 import NavBar from "../NavBar";
 
-function Header({ screenSize, setIsContactOpen }) {
+function Header({ screenSize, setIsContactOpen, setIsNavMenuOpen }) {
   return (
     <div
       className={`fixed top-0 w-screen max-w-full 
@@ -22,7 +22,7 @@ function Header({ screenSize, setIsContactOpen }) {
       {screenSize[0] >= 1024 ? (
         <NavBar setIsContactOpen={setIsContactOpen} />
       ) : (
-        <div>
+        <button onClick={() => setIsNavMenuOpen(true)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width={screenSize[0] >= 640 ? "64" : "48"}
@@ -36,7 +36,7 @@ function Header({ screenSize, setIsContactOpen }) {
               d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
             />
           </svg>
-        </div>
+        </button>
       )}
     </div>
   );
