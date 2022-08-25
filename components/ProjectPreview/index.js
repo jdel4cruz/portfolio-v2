@@ -52,7 +52,7 @@ function ProjectPreview({
       />
       <Link href={route}>
         <div className="w-full h-full">
-          <Image src={image} layout="fill" objectFit="cover" />
+          <Image src={image} layout="fill" objectFit="cover" priority />
           <div className="w-full h-full bg-black opacity-75" />
           <div
             className={`absolute flex flex-col ${

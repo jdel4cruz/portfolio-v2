@@ -1,8 +1,10 @@
 import React from "react";
-import Button from "../Button";
+import ContactButton from "../ContactButton";
 import Socials from "../Socials";
 
-const Contact = React.forwardRef((props, ref) => {
+const Contact = React.forwardRef(({ setIsContactOpen }, ref) => {
+  console.log(setIsContactOpen);
+
   return (
     <div
       className="w-screen max-w-full min-h-[75vw] lg:min-h-screen flex flex-col justify-center items-center pb-16 lg:pb-0"
@@ -20,7 +22,13 @@ const Contact = React.forwardRef((props, ref) => {
           question for me, or just want to say hi, please feel free to{" "}
           <strong>contact me!</strong>
         </p>
-        <Button hasShadow={true}>Say Hi!</Button>
+        <ContactButton
+          hasShadow={true}
+          onPress={setIsContactOpen}
+          onPressParams={true}
+        >
+          Say Hi!
+        </ContactButton>
         <Socials />
       </div>
     </div>

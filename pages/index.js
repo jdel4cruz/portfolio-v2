@@ -87,7 +87,7 @@ export default function Home() {
         <Main ref={homeRef} />
         <About screenSize={screenSize} ref={aboutRef} />
         <Projects ref={projectsRef} />
-        <Contact ref={contactRef} />
+        <Contact ref={contactRef} setIsContactOpen={setIsContactOpen} />
       </ViewContext.Provider>
     </>
   );
