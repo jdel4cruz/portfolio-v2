@@ -10,7 +10,7 @@ function NavBar({ setIsContactOpen }) {
 
   return (
     <ul className="flex gap-8 items-center lg:gap-16">
-      <li className="w-fit relative">
+      <li className="w-fit pb-1 relative">
         <Link href="#home">
           <a className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary relative">
             Home
@@ -23,7 +23,7 @@ function NavBar({ setIsContactOpen }) {
           />
         )}
       </li>
-      <li className="w-fit relative">
+      <li className="w-fit pb-1 relative">
         <Link href="#about">
           <a className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary">
             About
@@ -36,7 +36,7 @@ function NavBar({ setIsContactOpen }) {
           />
         )}
       </li>
-      <li className="w-fit relative">
+      <li className="w-fit pb-1 relative">
         <Link href="#projects">
           <a className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary">
             Projects
@@ -49,7 +49,7 @@ function NavBar({ setIsContactOpen }) {
           />
         )}
       </li>
-      <li className="w-fit relative">
+      <li className="w-fit pb-1 relative">
         <button
           className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary"
           onClick={() => setIsContactOpen(true)}

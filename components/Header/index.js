@@ -1,5 +1,4 @@
 import React from "react";
-import { useScroll } from "framer-motion";
 import Image from "next/image";
 import Logo from "../../assets/svgs/Logo2.svg";
 
@@ -7,7 +6,10 @@ import NavBar from "../NavBar";
 
 function Header({ screenSize, setIsContactOpen }) {
   return (
-    <div className="fixed top-0 w-screen max-w-full flex justify-between items-center px-8 md:px-16 py-8 bg-[rgba(255,255,255,0.1)] backdrop-blur z-40">
+    <div
+      className={`fixed top-0 w-screen max-w-full 
+       flex justify-between items-center px-8 md:px-16 py-6 pb-4 bg-[rgba(255,255,255,0.1)] backdrop-blur z-40`}
+    >
       <div className="h-16 sm:h-20 aspect-[300/129] relative">
         <Image
           src={Logo}

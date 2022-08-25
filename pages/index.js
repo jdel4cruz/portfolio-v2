@@ -34,7 +34,6 @@ export default function Home() {
   const { homeRef, aboutRef, contactRef } = refs;
 
   const observerCallback = (entries) => {
-    console.log(entries);
     entries.forEach((entry) => {
       entry.isIntersecting && setIsInView(entry.target.id);
     });

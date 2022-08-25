@@ -4,7 +4,7 @@ import Socials from "../Socials";
 const Main = React.forwardRef((props, ref) => {
   return (
     <div
-      className="w-screen max-w-full min-h-screen flex items-center justify-center"
+      className="w-screen max-w-full min-h-screen flex items-center justify-center pt-24"
       id="home"
       ref={ref}
     >
