@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, useEffect, useRef, createContext, useContext } from "react";
 
 import Head from "next/head";
 
@@ -14,11 +14,63 @@ import ContactModal from "../components/ContactModal";
 import useScreenSize from "../Hooks/useScreenSize";
 
 // Contexts
-import ViewProvider from "../Contexts/ViewContext";
+export const ViewContext = createContext();
+export const useViewContext = () => {
+  return useContext(ViewContext);
+};
 
 export default function Home() {
   const screenSize = useScreenSize();
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isInView, setIsInView] = useState("home");
+
+  const refs = {};
+  const projectsRef = useRef();
+  const refNames = ["homeRef", "aboutRef", "contactRef"];
+  refNames.forEach((refname) => {
+    const ref = useRef();
+    refs[refname] = ref;
+  });
+  const { homeRef, aboutRef, contactRef } = refs;
+
+  console.log(refs);
+  console.log(isInView);
+
+  const observerCallback = (entries) => {
+    console.log(entries);
+    entries.forEach((entry) => {
+      console.log("entry", entry.target.id);
+      entry.isIntersecting && setIsInView(entry.target.id);
+    });
+  };
+
+  const longObserverCallback = (entries) => {
+    const [entry] = entries;
+    console.log("long entry", entry);
+    entry.isIntersecting && setIsInView(entry.target.id);
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(observerCallback, {
+      threshold: 0.5,
+    });
+    Object.values(refs).forEach(
+      (ref) => ref.current && observer.observe(ref.current)
+    );
+
+    const longObserver = new IntersectionObserver(longObserverCallback, {
+      threshold: 0.3,
+    });
+    longObserver.observe(projectsRef.current);
+
+    return () => {
+      Object.values(refs).forEach(
+        (ref) => ref.current && observer.unobserve(ref.current)
+      );
+
+      longObserver.unobserve(projectsRef.current);
+    };
+  }, []);
 
   return (
     <>
@@ -35,14 +87,14 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <ViewProvider>
+      <ViewContext.Provider value={{ isInView, setIsInView }}>
         <ContactModal isOpen={isContactOpen} setIsOpen={setIsContactOpen} />
         <Header screenSize={screenSize} setIsContactOpen={setIsContactOpen} />
-        <Main />
-        <About screenSize={screenSize} />
-        <Projects />
-        <Contact />
-      </ViewProvider>
+        <Main ref={homeRef} />
+        <About screenSize={screenSize} ref={aboutRef} />
+        <Projects ref={projectsRef} />
+        <Contact ref={contactRef} />
+      </ViewContext.Provider>
     </>
   );
 }

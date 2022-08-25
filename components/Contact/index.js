@@ -2,9 +2,13 @@ import React from "react";
 import Button from "../Button";
 import Socials from "../Socials";
 
-function Contact() {
+const Contact = React.forwardRef((props, ref) => {
   return (
-    <div className="w-screen max-w-full min-h-[75vw] lg:min-h-screen flex flex-col justify-center items-center pb-16 lg:pb-0">
+    <div
+      className="w-screen max-w-full min-h-[75vw] lg:min-h-screen flex flex-col justify-center items-center pb-16 lg:pb-0"
+      id="contact"
+      ref={ref}
+    >
       <div className="text-background_sm md:text-background_md lg:text-background 3xl:text-background_xl text-primary_tone leading-tight -z-10 pb-4">
         CONTACT
       </div>
@@ -21,6 +25,6 @@ function Contact() {
       </div>
     </div>
   );
-}
+});
 
 export default Contact;

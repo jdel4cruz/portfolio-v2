@@ -1,10 +1,12 @@
 import React from "react";
 import Socials from "../Socials";
-function Main() {
+
+const Main = React.forwardRef((props, ref) => {
   return (
     <div
       className="w-screen max-w-full min-h-screen flex items-center justify-center"
       id="home"
+      ref={ref}
     >
       <div className="w-5/6 xl:w-8/12 flex flex-col justify-center items-center lg:items-start">
         <h1 className="text-primary_tone leading-tight">John De La Cruz</h1>
@@ -24,6 +26,6 @@ function Main() {
       </div>
     </div>
   );
-}
+});
 
 export default Main;
