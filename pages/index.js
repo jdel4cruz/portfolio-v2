@@ -33,20 +33,15 @@ export default function Home() {
   });
   const { homeRef, aboutRef, contactRef } = refs;
 
-  console.log(refs);
-  console.log(isInView);
-
   const observerCallback = (entries) => {
     console.log(entries);
     entries.forEach((entry) => {
-      console.log("entry", entry.target.id);
       entry.isIntersecting && setIsInView(entry.target.id);
     });
   };
 
   const longObserverCallback = (entries) => {
     const [entry] = entries;
-    console.log("long entry", entry);
     entry.isIntersecting && setIsInView(entry.target.id);
   };
 
