@@ -2,30 +2,35 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
+// Components
+import CloseIcon from "../CloseIcon";
+
+const menuVariant = {
+  initial: { x: "100%" },
+  animate: {
+    x: 0,
+    transition: {
+      when: "beforeChildren",
+      type: "tween",
+      delayChildren: 0.3,
+    },
+  },
+  exit: {
+    y: "-100%",
+  },
+};
+
+const listVariant = {
+  animate: { transition: { staggerChildren: 0.1 } },
+};
+
+const barVariant = {
+  initial: { x: "100%" },
+  animate: { x: 0, transition: { type: "tween" } },
+};
+
 function NavMenu({ isOpen, setIsOpen, setIsContactOpen }) {
-  const menuVariant = {
-    initial: { x: "100%" },
-    animate: {
-      x: 0,
-      transition: {
-        when: "beforeChildren",
-        type: "tween",
-        delayChildren: 0.3,
-      },
-    },
-    exit: {
-      x: "-100%",
-    },
-  };
-
-  const listVariant = {
-    animate: { transition: { staggerChildren: 0.1 } },
-  };
-
-  const barVariant = {
-    initial: { x: "100%" },
-    animate: { x: 0, transition: { type: "tween" } },
-  };
+  const handleClose = () => setIsOpen(false);
 
   return (
     <AnimatePresence>
@@ -36,8 +41,9 @@ function NavMenu({ isOpen, setIsOpen, setIsContactOpen }) {
           initial="initial"
           animate="animate"
           exit="exit"
-          transition={{ type: "tween" }}
+          transition={{ type: "tween", ease: "easeOut" }}
         >
+          <CloseIcon handleClose={handleClose} />
           <motion.ul
             className="absolute top-0 -translate-x-full w-full h-full flex flex-col items-center z-50"
             variants={listVariant}
@@ -112,9 +118,6 @@ function NavMenu({ isOpen, setIsOpen, setIsContactOpen }) {
               >
                 Contact
               </button>
-            </li>
-            <li onClick={() => setIsOpen(false)}>
-              <button>close</button>
             </li>
           </ul>
         </motion.div>
