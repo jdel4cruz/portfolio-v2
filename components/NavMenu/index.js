@@ -3,72 +3,121 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 function NavMenu({ isOpen, setIsOpen, setIsContactOpen }) {
+  const menuVariant = {
+    initial: { x: "100%" },
+    animate: {
+      x: 0,
+      transition: {
+        when: "beforeChildren",
+        type: "tween",
+        delayChildren: 0.3,
+      },
+    },
+    exit: {
+      x: "-100%",
+    },
+  };
+
+  const listVariant = {
+    animate: { transition: { staggerChildren: 0.1 } },
+  };
+
+  const barVariant = {
+    initial: { x: "100%" },
+    animate: { x: 0, transition: { type: "tween" } },
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.ul
+        <motion.div
           className="fixed top-0 w-full h-full flex flex-col gap-8 justify-center z-50 bg-secondary"
-          initial={{ translateX: "90%" }}
-          animate={{
-            translateX: 0,
-          }}
-          exit={{
-            translateX: "-100%",
-          }}
-          transition={{ type: "tween", duration: 0.2 }}
+          variants={menuVariant}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          transition={{ type: "tween" }}
         >
-          <motion.li className="w-full relative">
-            <Link href="#home">
-              <a
+          <motion.ul
+            className="absolute top-0 -translate-x-full w-full h-full flex flex-col items-center z-50"
+            variants={listVariant}
+          >
+            <motion.li
+              className="h-1/8 w-full  bg-primary"
+              variants={barVariant}
+            />
+            <motion.li
+              className="h-1/8 w-full bg-primary"
+              variants={barVariant}
+            />
+            <motion.li
+              className="h-1/8 w-full bg-primary "
+              variants={barVariant}
+            />
+            <motion.li
+              className="h-1/8 w-full bg-primary"
+              variants={barVariant}
+            />
+            <motion.li
+              className="h-1/8 w-full bg-primary"
+              variants={barVariant}
+            />
+            <motion.li
+              className="h-1/8 w-full bg-primary"
+              variants={barVariant}
+            />
+            <motion.li
+              className="h-1/8 w-full bg-primary "
+              variants={barVariant}
+            />
+            <motion.li
+              className="h-1/8 w-full bg-primary"
+              variants={barVariant}
+            />
+          </motion.ul>
+          <ul className="flex flex-col items-center gap-8">
+            <li className="w-full relative">
+              <Link href="#home">
+                <a
+                  className=" flex justify-center w-full text-white text-h1"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Home
+                </a>
+              </Link>
+            </li>
+            <li className="w-full relative">
+              <Link href="#about">
+                <a
+                  className=" flex justify-center w-full text-white text-h1"
+                  onClick={() => setIsOpen(false)}
+                >
+                  About
+                </a>
+              </Link>
+            </li>
+            <li className="w-full relative">
+              <Link href="#projects">
+                <a className=" flex justify-center w-full text-white text-h1">
+                  Projects
+                </a>
+              </Link>
+            </li>
+            <li className="w-full relative">
+              <button
                 className=" flex justify-center w-full text-white text-h1"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsContactOpen(true), setIsOpen(false);
+                }}
               >
-                Home
-              </a>
-            </Link>
-            <motion.div
-              className="absolute w-full h-full top-0 right-0 bg-primary"
-              animate={{ x: "200%", transition: { delay: 0.5, duration: 0.2 } }}
-            />
-          </motion.li>
-          <motion.li className="w-full relative">
-            <Link href="#about">
-              <a className=" flex justify-center w-full text-white text-h1">
-                About
-              </a>
-            </Link>
-            <motion.div
-              className="absolute w-full h-full top-0 right-0 bg-primary"
-              animate={{ x: "200%", transition: { delay: 0.7, duration: 0.2 } }}
-            />
-          </motion.li>
-          <motion.li className="w-full relative">
-            <Link href="#projects">
-              <a className=" flex justify-center w-full text-white text-h1">
-                Projects
-              </a>
-            </Link>
-            <motion.div
-              className="absolute w-full h-full top-0 right-0 bg-primary"
-              animate={{ x: "200%", transition: { delay: 0.9, duration: 0.2 } }}
-            />
-          </motion.li>
-          <motion.li className="w-full relative">
-            <button
-              className=" flex justify-center w-full text-white text-h1"
-              onClick={() => {
-                setIsContactOpen(true), setIsOpen(false);
-              }}
-            >
-              Contact
-            </button>
-            <motion.div
-              className="absolute w-full h-full top-0 right-0 bg-primary"
-              animate={{ x: "200%", transition: { delay: 1.1, duration: 0.2 } }}
-            />
-          </motion.li>
-          <button onClick={() => setIsOpen(false)}>close</button>
-        </motion.ul>
+                Contact
+              </button>
+            </li>
+            <li onClick={() => setIsOpen(false)}>
+              <button>close</button>
+            </li>
+          </ul>
+        </motion.div>
       )}
     </AnimatePresence>
   );
