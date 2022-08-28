@@ -1,10 +1,33 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Components
+import CloseIcon from "../CloseIcon";
+
+const textModal = {
+  initial: { x: "300%" },
+  animate: { x: "0", transition: { duration: 0.3 } },
+  exit: {
+    x: "-300%",
+    transition: { type: "tween", duration: 0.25 },
+  },
+};
+
+const formModal = {
+  initial: { x: "-300%" },
+  animate: { x: "0", transition: { duration: 0.3 } },
+  exit: {
+    x: "300%",
+    transition: { type: "tween", duration: 0.25 },
+  },
+};
+
 function ContactModal({ isOpen, setIsOpen }) {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+
+  const handleClose = () => setIsOpen(false);
 
   return (
     <AnimatePresence>
@@ -15,21 +38,23 @@ function ContactModal({ isOpen, setIsOpen }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: "75%" }}
             exit={{ opacity: 0 }}
+            onClick={handleClose}
           />
 
-          <div
-            className="flex flex-col items-center w-screen"
-            onClick={() => setIsOpen(false)}
-          >
+          <div className="flex flex-col items-center w-[600px]">
             <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: "0" }}
-              exit={{
-                x: "300%",
-                transition: { type: "tween", duration: 0.25 },
-              }}
-              className="bg-white p-12 pb-8 rounded-tl-3xl rounded-tr-3xl w-[600px]"
+              variants={textModal}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              className="bg-white p-12 pb-8 rounded-tl-3xl rounded-tr-3xl w-full"
             >
+              <CloseIcon
+                handleClose={handleClose}
+                color="bg-primary"
+                size="w-12 h-12"
+                delay={0.4}
+              />
               <motion.h2 className="text-h2_md text-primary mb-4">
                 Hey There!
               </motion.h2>
@@ -40,12 +65,10 @@ function ContactModal({ isOpen, setIsOpen }) {
               </motion.p>
             </motion.div>
             <motion.form
-              initial={{ x: "-100%" }}
-              animate={{ x: "0" }}
-              exit={{
-                x: "-300%",
-                transition: { type: "tween", duration: 0.25 },
-              }}
+              variants={formModal}
+              initial="initial"
+              animate="animate"
+              exit="exit"
               className="flex flex-col gap-4 text-white bg-primary p-12 pt-8 rounded-bl-3xl rounded-br-3xl w-[600px]"
             >
               <div className="flex flex-col">

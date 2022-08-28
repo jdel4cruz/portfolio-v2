@@ -1,9 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-function CloseIcon({ handleClose }) {
+function CloseIcon({
+  handleClose,
+  color = "bg-white",
+  size = "w-12 h-12 md:w-16 md: h-16",
+  delay = 0.7,
+}) {
   const containerVariant = {
-    animate: { transition: { delayChildren: 1 } },
+    animate: { transition: { delayChildren: delay } },
   };
   const line1Variant = {
     animate: {
@@ -19,16 +24,16 @@ function CloseIcon({ handleClose }) {
   };
   return (
     <motion.button
-      className="absolute top-8 right-8 flex flex-col w-12 h-12 md:w-16 md:h-16 justify-center items-center"
+      className={`absolute top-8 right-8 flex flex-col ${size} justify-center items-center`}
       variants={containerVariant}
       onClick={() => handleClose()}
     >
       <motion.span
-        className="absolute w-full h-1 rounded-2xl bg-white"
+        className={`absolute w-full h-1 rounded-2xl ${color}`}
         variants={line1Variant}
       />
       <motion.span
-        className="absolute w-full h-1 rounded-2xl bg-white"
+        className={`absolute w-full h-1 rounded-2xl ${color}`}
         variants={line2Variant}
       />
     </motion.button>
