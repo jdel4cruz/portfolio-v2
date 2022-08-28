@@ -22,6 +22,11 @@ const formModal = {
   },
 };
 
+const overlayVariant = {
+  initial: { opacity: 0 },
+  animate: { opacity: "75%" },
+  exit: { opacity: 0 },
+};
 function ContactModal({ isOpen, setIsOpen }) {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,9 +40,10 @@ function ContactModal({ isOpen, setIsOpen }) {
         <div className="fixed flex items-center justify-center w-screen max-w-full h-screen z-50 overflow">
           <motion.div
             className="absolute top-0 right-0 w-full h-full bg-black -z-10"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: "75%" }}
-            exit={{ opacity: 0 }}
+            variants={overlayVariant}
+            initial="initial"
+            animate="animate"
+            exit="exit"
             onClick={handleClose}
           />
 
