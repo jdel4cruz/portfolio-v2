@@ -1,5 +1,16 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const schema = yup
+  .object({
+    name: yup.string().required(),
+    email: yup.string().email().required(),
+    message: yup.string(),
+  })
+  .required();
 
 // Components
 import CloseIcon from "../CloseIcon";
@@ -27,9 +38,18 @@ const overlayVariant = {
   animate: { opacity: "75%" },
   exit: { opacity: 0 },
 };
+
 function ContactModal({ isOpen, setIsOpen }) {
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = (data) => {
+    console.log(data);
   };
 
   const handleClose = () => setIsOpen(false);
@@ -70,7 +90,9 @@ function ContactModal({ isOpen, setIsOpen }) {
                 back to you ASAP.
               </motion.p>
             </motion.div>
+
             <motion.form
+              onSubmit={handleSubmit(onSubmit)}
               variants={formModal}
               initial="initial"
               animate="animate"
@@ -82,6 +104,7 @@ function ContactModal({ isOpen, setIsOpen }) {
                   Name:
                 </label>
                 <input
+                  {...register("name")}
                   type="text"
                   className="text-black_75 p-4"
                   id="name"
@@ -93,6 +116,7 @@ function ContactModal({ isOpen, setIsOpen }) {
                   Email:
                 </label>
                 <input
+                  {...register("email")}
                   type="text"
                   className="text-black_75 p-4"
                   id="email"
@@ -104,17 +128,17 @@ function ContactModal({ isOpen, setIsOpen }) {
                   Message:
                 </label>
                 <textarea
+                  {...register("message")}
                   id="message"
                   className="resize-none p-4 text-black_75 h-[200px]"
                   placeholder="Message"
                 />
               </div>
-              <button
+              <input
                 className="bg-secondary rounded-lg px-8 py-4 text-p text-white w-1/3"
-                onClick={() => handleSubmit()}
-              >
-                Submit!
-              </button>
+                type="submit"
+                value="Submit!"
+              />
             </motion.form>
           </div>
         </div>
