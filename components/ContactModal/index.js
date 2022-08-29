@@ -17,7 +17,7 @@ import CloseIcon from "../CloseIcon";
 
 const textModal = {
   initial: { x: "300%" },
-  animate: { x: "0", transition: { duration: 0.3 } },
+  animate: { x: "0" },
   exit: {
     x: "-300%",
     transition: { type: "tween", duration: 0.25 },
@@ -26,7 +26,7 @@ const textModal = {
 
 const formModal = {
   initial: { x: "-300%" },
-  animate: { x: "0", transition: { duration: 0.3 } },
+  animate: { x: "0" },
   exit: {
     x: "300%",
     transition: { type: "tween", duration: 0.25 },
@@ -48,12 +48,16 @@ function ContactModal({ isOpen, setIsOpen }) {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log(data);
+
+    // const response = await fetch(())
   };
 
   const handleClose = () => setIsOpen(false);
 
+  const test = process.env.BURNER_EMAIL;
+  console.log(process.env.NEXT_PUBLIC_API_URL);
   return (
     <AnimatePresence>
       {isOpen && (
