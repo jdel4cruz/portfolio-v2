@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -40,6 +41,8 @@ const overlayVariant = {
 };
 
 function ContactModal({ isOpen, setIsOpen }) {
+  const [sentMessage, setSentMessage] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -50,14 +53,22 @@ function ContactModal({ isOpen, setIsOpen }) {
 
   const onSubmit = async (data) => {
     console.log(data);
+    const url = process.env.NEXT_PUBLIC_API_URL;
 
-    // const response = await fetch(())
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    console.log(response);
+    console.log(await response.json());
   };
 
   const handleClose = () => setIsOpen(false);
 
-  const test = process.env.BURNER_EMAIL;
-  console.log(process.env.NEXT_PUBLIC_API_URL);
   return (
     <AnimatePresence>
       {isOpen && (
