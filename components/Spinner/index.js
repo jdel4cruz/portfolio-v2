@@ -11,7 +11,7 @@ const spinnerVariant = {
       repeat: Infinity,
       repeatType: "loop",
       duration: 1,
-      ease: [0.8, -0.46, 0.56, 1.16],
+      ease: [0.9, -0.46, 0.56, 1.16],
     },
   },
   exit: {

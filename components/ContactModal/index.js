@@ -40,12 +40,12 @@ const formModal = {
 const overlayVariant = {
   initial: { opacity: 0 },
   animate: { opacity: "75%" },
-  exit: { opacity: 0 },
+  exit: { opacity: 0, transition: { duration: 0.25 } },
 };
 
 const emailResponseVariant = {
   initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { delay: 0.3 } },
+  animate: { opacity: 1, transition: { delay: 0.25 } },
 };
 
 const defaultFormValues = { name: "", email: "", message: "" };
@@ -184,7 +184,7 @@ function ContactModal({ isOpen, setIsOpen }) {
               </div>
               <div className="flex items-center gap-8">
                 <button
-                  className="bg-secondary rounded-lg px-8 py-4 flex justify-center items-center"
+                  className="bg-secondary rounded-lg px-12 py-4 flex justify-center items-center"
                   type="submit"
                   value="Submit!"
                 >
