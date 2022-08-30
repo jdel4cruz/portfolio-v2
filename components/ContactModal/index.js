@@ -77,6 +77,7 @@ function ContactModal({ isOpen, setIsOpen }) {
   const onSubmit = async (data) => {
     setSendingMessage(true);
     const url = process.env.NEXT_PUBLIC_API_URL;
+    console.log(url);
 
     const apiResponse = await fetch(url, {
       method: "POST",
