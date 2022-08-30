@@ -12,7 +12,7 @@ const schema = yup
   .object({
     name: yup.string().required(),
     email: yup.string().email().required(),
-    message: yup.string(),
+    message: yup.string().required(),
   })
   .required();
 
@@ -77,7 +77,6 @@ function ContactModal({ isOpen, setIsOpen }) {
   const onSubmit = async (data) => {
     setSendingMessage(true);
     const url = process.env.NEXT_PUBLIC_API_URL;
-    console.log(url);
 
     const apiResponse = await fetch(url, {
       method: "POST",
@@ -93,6 +92,8 @@ function ContactModal({ isOpen, setIsOpen }) {
   };
 
   const handleClose = () => setIsOpen(false);
+
+  console.log(errors);
 
   return (
     <AnimatePresence>
@@ -140,12 +141,29 @@ function ContactModal({ isOpen, setIsOpen }) {
               className="flex flex-col gap-4 text-white bg-primary p-12 pt-8 sm:rounded-bl-3xl sm:rounded-br-3xl w-full"
             >
               <div className="flex flex-col">
-                <label
-                  htmlFor="name"
-                  className="text-p_md leading-relaxed w-fit"
-                >
-                  Name:
-                </label>
+                <div className="flex justify-between items-center">
+                  <label
+                    htmlFor="name"
+                    className="text-p_md leading-relaxed w-fit"
+                  >
+                    Name:
+                  </label>
+                  <AnimatePresence>
+                    {errors.name && (
+                      <div className="overflow-hidden h-fit">
+                        <motion.p
+                          className="text-p_sm sm:text-p_md"
+                          initial={{ y: "100%" }}
+                          animate={{ y: 0 }}
+                          exit={{ y: "100%" }}
+                        >
+                          {errors.name.message}
+                        </motion.p>
+                      </div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
                 <input
                   {...register("name")}
                   type="text"
@@ -155,12 +173,28 @@ function ContactModal({ isOpen, setIsOpen }) {
                 />
               </div>
               <div className="flex flex-col">
-                <label
-                  htmlFor="email"
-                  className="text-p_md leading-relaxed w-fit"
-                >
-                  Email:
-                </label>
+                <div className="flex justify-between items-center">
+                  <label
+                    htmlFor="email"
+                    className="text-p_md leading-relaxed w-fit"
+                  >
+                    Email:
+                  </label>
+                  <AnimatePresence>
+                    {errors.email && (
+                      <div className="overflow-hidden h-fit">
+                        <motion.p
+                          className="text-p_sm sm:text-p_md"
+                          initial={{ y: "100%" }}
+                          animate={{ y: 0 }}
+                          exit={{ y: "100%" }}
+                        >
+                          {errors.email.message}
+                        </motion.p>
+                      </div>
+                    )}
+                  </AnimatePresence>
+                </div>
                 <input
                   {...register("email")}
                   type="text"
@@ -170,12 +204,28 @@ function ContactModal({ isOpen, setIsOpen }) {
                 />
               </div>
               <div className="flex flex-col pb-4">
-                <label
-                  htmlFor="message"
-                  className="text-p_md leading-relaxed w-fit"
-                >
-                  Message:
-                </label>
+                <div className="flex justify-between items-center">
+                  <label
+                    htmlFor="message"
+                    className="text-p_md leading-relaxed w-fit"
+                  >
+                    Message:
+                  </label>
+                  <AnimatePresence>
+                    {errors.message && (
+                      <div className="overflow-hidden h-fit">
+                        <motion.p
+                          className="text-p_sm sm:text-p_md"
+                          initial={{ y: "100%" }}
+                          animate={{ y: 0 }}
+                          exit={{ y: "100%" }}
+                        >
+                          {errors.message.message}
+                        </motion.p>
+                      </div>
+                    )}
+                  </AnimatePresence>
+                </div>
                 <textarea
                   {...register("message")}
                   id="message"
