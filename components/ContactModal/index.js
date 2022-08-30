@@ -1,9 +1,12 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+
+// Components
+import Spinner from "../Spinner";
 
 const schema = yup
   .object({
@@ -40,22 +43,42 @@ const overlayVariant = {
   exit: { opacity: 0 },
 };
 
+const emailResponseVariant = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { delay: 0.3 } },
+};
+
+const defaultFormValues = { name: "", email: "", message: "" };
+
 function ContactModal({ isOpen, setIsOpen }) {
-  const [sentMessage, setSentMessage] = useState(false);
+  const [emailResponse, setEmailResponse] = useState(null);
+  const [sendingMessage, setSendingMessage] = useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     resolver: yupResolver(schema),
+    defaultValues: defaultFormValues,
   });
 
+  useEffect(() => {
+    if (!sendingMessage) {
+      setTimeout(() => {
+        reset(defaultFormValues);
+        setEmailResponse(null);
+        setIsOpen(false);
+      }, 1000);
+    }
+  }, [sendingMessage]);
+
   const onSubmit = async (data) => {
-    console.log(data);
+    setSendingMessage(true);
     const url = process.env.NEXT_PUBLIC_API_URL;
 
-    const response = await fetch(url, {
+    const apiResponse = await fetch(url, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -63,8 +86,9 @@ function ContactModal({ isOpen, setIsOpen }) {
       body: JSON.stringify(data),
     });
 
-    console.log(response);
-    console.log(await response.json());
+    const { response } = await apiResponse.json();
+    setSendingMessage(false);
+    setEmailResponse(response);
   };
 
   const handleClose = () => setIsOpen(false);
@@ -82,24 +106,24 @@ function ContactModal({ isOpen, setIsOpen }) {
             onClick={handleClose}
           />
 
-          <div className="flex flex-col items-center w-[600px]">
+          <div className="flex flex-col items-center w-full h-full sm:h-fit sm:w-[600px] overflow-scroll sm:overflow-visible">
             <motion.div
               variants={textModal}
               initial="initial"
               animate="animate"
               exit="exit"
-              className="bg-white p-12 pb-8 rounded-tl-3xl rounded-tr-3xl w-full"
+              className="flex flex-col gap-4 bg-white p-12 pb-8 sm:rounded-tl-3xl sm:rounded-tr-3xl w-full"
             >
               <CloseIcon
                 handleClose={handleClose}
                 color="bg-primary"
-                size="w-12 h-12"
+                size="w-10 h-10 sm:w-12 sm:h-12"
                 delay={0.4}
               />
-              <motion.h2 className="text-h2_md text-primary mb-4">
+              <motion.h2 className="text-h2_md text-primary sm:mb-4">
                 Hey There!
               </motion.h2>
-              <motion.p className="text-p_md text-black_75">
+              <motion.p className="sm:text-xl text-black_75">
                 If you'd like to talk about freelance work, ask a question, or
                 just want to say hi, please fill out the form below and I'll get
                 back to you ASAP.
@@ -112,10 +136,13 @@ function ContactModal({ isOpen, setIsOpen }) {
               initial="initial"
               animate="animate"
               exit="exit"
-              className="flex flex-col gap-4 text-white bg-primary p-12 pt-8 rounded-bl-3xl rounded-br-3xl w-[600px]"
+              className="flex flex-col gap-4 text-white bg-primary p-12 pt-8 sm:rounded-bl-3xl sm:rounded-br-3xl w-full"
             >
               <div className="flex flex-col">
-                <label htmlFor="name" className="text-h2_sm w-fit">
+                <label
+                  htmlFor="name"
+                  className="text-p_md leading-relaxed w-fit"
+                >
                   Name:
                 </label>
                 <input
@@ -127,7 +154,10 @@ function ContactModal({ isOpen, setIsOpen }) {
                 />
               </div>
               <div className="flex flex-col">
-                <label htmlFor="email" className="text-h2_sm w-fit">
+                <label
+                  htmlFor="email"
+                  className="text-p_md leading-relaxed w-fit"
+                >
                   Email:
                 </label>
                 <input
@@ -139,7 +169,10 @@ function ContactModal({ isOpen, setIsOpen }) {
                 />
               </div>
               <div className="flex flex-col pb-4">
-                <label htmlFor="message" className="text-h2_sm w-fit">
+                <label
+                  htmlFor="message"
+                  className="text-p_md leading-relaxed w-fit"
+                >
                   Message:
                 </label>
                 <textarea
@@ -149,11 +182,35 @@ function ContactModal({ isOpen, setIsOpen }) {
                   placeholder="Message"
                 />
               </div>
-              <input
-                className="bg-secondary rounded-lg px-8 py-4 text-p text-white w-1/3"
-                type="submit"
-                value="Submit!"
-              />
+              <div className="flex items-center gap-8">
+                <button
+                  className="bg-secondary rounded-lg px-8 py-4 flex justify-center items-center"
+                  type="submit"
+                  value="Submit!"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    className="w-10 h-10 md:w-12 md:h-12"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />
+                  </svg>
+                </button>
+                <Spinner isSending={sendingMessage} />
+                <div>
+                  {emailResponse && (
+                    <motion.h2
+                      className="text-h2_sm"
+                      variants={emailResponseVariant}
+                      initial="initial"
+                      animate="animate"
+                    >
+                      {emailResponse}
+                    </motion.h2>
+                  )}
+                </div>
+              </div>
             </motion.form>
           </div>
         </div>

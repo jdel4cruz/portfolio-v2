@@ -104,7 +104,10 @@ function NavMenu({ isOpen, setIsOpen, setIsContactOpen }) {
             </li>
             <li className="w-full relative">
               <Link href="#projects">
-                <a className=" flex justify-center w-full text-white text-h1">
+                <a
+                  className=" flex justify-center w-full text-white text-h1"
+                  onClick={() => setIsOpen(false)}
+                >
                   Projects
                 </a>
               </Link>

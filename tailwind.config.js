@@ -70,6 +70,7 @@ module.exports = {
       black_10: "#CFCFD1",
       black_5: "#E1E1E3",
       white: "#ffffff",
+      transparent: "transparent",
     },
   },
   plugins: [],

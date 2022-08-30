@@ -24,7 +24,7 @@ function CloseIcon({
   };
   return (
     <motion.button
-      className={`absolute top-8 right-8 flex flex-col ${size} justify-center items-center`}
+      className={`absolute top-4 right-4 sm:top-8 sm:right-8 flex flex-col ${size} justify-center items-center`}
       variants={containerVariant}
       onClick={() => handleClose()}
     >
