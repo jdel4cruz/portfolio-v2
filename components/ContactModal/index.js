@@ -93,8 +93,6 @@ function ContactModal({ isOpen, setIsOpen }) {
 
   const handleClose = () => setIsOpen(false);
 
-  console.log(errors);
-
   return (
     <AnimatePresence>
       {isOpen && (

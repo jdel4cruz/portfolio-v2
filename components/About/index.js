@@ -4,10 +4,9 @@ const techItem =
   "before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-1/4 before:aspect-square before:bg-primary relative items-center tracking-tighter md:text-[20px] lg:text-p_md  text-black_75 pl-6 w-1/2 sm:w-1/4";
 
 const About = React.forwardRef(({ screenSize }, ref) => {
-  console.log(screenSize);
   return (
     <div
-      className="w-screen max-w-full min-h-[75vh] lg:min-h-screen flex flex-col items-center lg:justify-center relative gap-12 md: mb-16"
+      className="w-screen max-w-full min-h-[75vh] lg:min-h-screen flex flex-col items-center lg:justify-center relative gap-12 md: mb-16 scroll-mt-[120px] lg:scroll-mt-0"
       id="about"
       ref={ref}
     >

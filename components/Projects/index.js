@@ -7,7 +7,7 @@ import Portfolio from "../../assets/project_imgs/Portfolio.jpg";
 const Projects = React.forwardRef((props, ref) => {
   return (
     <div
-      className="w-screen max-w-full min-h-screen flex flex-col items-center pb-32"
+      className="w-screen max-w-full min-h-screen flex flex-col items-center pb-32 scroll-mt-[120px] lg:scroll-mt-20"
       id="projects"
       ref={ref}
     >
