@@ -60,11 +60,12 @@ export default function Home() {
     longObserver.observe(projectsRef.current);
 
     return () => {
-      Object.values(refs).forEach(
-        (ref) => ref.current && observer.unobserve(ref.current)
-      );
+      // Object.values(refs).forEach(
+      //   (ref) => ref.current && observer.unobserve(ref.current)
+      // );
+      observer.disconnect();
 
-      longObserver.unobserve(projectsRef.current);
+      longObserver.disconnect();
     };
   }, []);
 

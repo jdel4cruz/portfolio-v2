@@ -70,7 +70,7 @@ function ContactModal({ isOpen, setIsOpen }) {
         reset(defaultFormValues);
         setEmailResponse(null);
         setIsOpen(false);
-      }, 1000);
+      }, 3000);
     }
   }, [sendingMessage]);
 
