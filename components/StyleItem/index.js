@@ -18,9 +18,11 @@ const colorContentVariant = {
   },
 };
 
+const pClassName = "text-p_sm md:text-p_md lg:text-p ";
+
 function StyleItem({ colorCode, className }) {
   return (
-    <motion.li className="w-1/6 sm:w-1/5 flex justify-center items-center">
+    <motion.li className="w-1/8  flex justify-center items-center">
       <motion.div
         className="w-full flex flex-col gap-4 items-center"
         variants={colorItemVariant}
@@ -29,7 +31,10 @@ function StyleItem({ colorCode, className }) {
           className={`w-full aspect-square shadow-xl ${className}`}
           variants={colorContentVariant}
         />
-        <motion.p variants={colorContentVariant}>{`${colorCode}`}</motion.p>
+        <motion.p
+          className={pClassName}
+          variants={colorContentVariant}
+        >{`${colorCode}`}</motion.p>
       </motion.div>
     </motion.li>
   );

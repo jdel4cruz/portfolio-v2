@@ -32,7 +32,7 @@ const blackColors = [
   { colorCode: "#B4B4CE", className: "bg-[#B4B4CE]" },
 ];
 
-const pClassName = "text-p_sm md:text-p_md lg:text-p 3xl:text-[31px]";
+const pClassName = "text-p_sm md:text-p_md lg:text-p ";
 
 export default function Portfolio() {
   const screenSize = useScreenSize();
@@ -61,7 +61,7 @@ export default function Portfolio() {
         />
       </Head>
 
-      <div className="relative w-screen pb-12 flex flex-col items-center gap-4 md:gap-12 bg-[url('/images/JDCruz_portfolio_site3.png')] bg-cover bg-center after:absolute after:w-full after:h-full after:bg-black_75 after:opacity-75">
+      <div className="relative w-screen pb-12 flex flex-col items-center gap-4 md:gap-12 bg-[url('/images/JDCruz_portfolio_site3.png')] bg-cover bg-center after:absolute after:w-full after:h-full after:bg-black after:opacity-75">
         <ProjectHeader
           screenSize={screenSize}
           setIsContactOpen={setIsContactOpen}
@@ -72,9 +72,9 @@ export default function Portfolio() {
           <h2 className="text-white">Focused on Design</h2>
         </div>
       </div>
-      <div className="w-screen max-w-full min-h-screen flex flex-col gap-8 md:gap-24 items-center justify-center mt-24">
-        <div className="w-2/3 gap-4 md:gap-8 flex flex-col justify-center items-center ">
-          <h2 className="text-primary text-background_sm md:text-background_md 2xl:text-[119px]">
+      <div className="w-screen max-w-full min-h-screen flex flex-col gap-8 md:gap-24 items-center justify-center mt-20">
+        <div className="w-2/3 max-w-[1150px] gap-4 md:gap-8 flex flex-col justify-center items-center ">
+          <h2 className="text-primary text-background_sm md:text-[64px] lg:text-background_md 3xl:text-[100px]   self-start">
             Overview
           </h2>
           <p className={pClassName}>
@@ -84,11 +84,11 @@ export default function Portfolio() {
             time to redo it.
           </p>
           <p className={pClassName}>
-            When building my website, I decided on NextJS for 3 reasons. I'm
-            very comfortable with React, it has a bunch of built in
-            functionality with things like API routes and environment variables,
-            and when it comes time to deploy the application, NextJS lets me
-            deploy the front-end and back-end on one hosting platform.
+            When building my website, I decided on using NextJS as my framework
+            for 3 reasons. I'm very comfortable with React, it has a bunch of
+            built in functionality with things like API routes and environment
+            variables, and when it comes time to deploy the application, NextJS
+            lets me deploy the front-end and back-end on one hosting platform.
           </p>
           <p className={pClassName}>
             For styling, I settled on Tailwind CSS as it's a popular CSS
@@ -103,29 +103,29 @@ export default function Portfolio() {
             seamless.
           </p>
         </div>
-        <div className="w-2/3 gap-8 flex flex-col justify-center items-center">
-          <h2 className="text-primary text-background_sm md:text-background_md 2xl:text-[119px]">
+        <div className="w-2/3 max-w-[1150px] gap-8 flex flex-col justify-center items-center">
+          <h2 className="text-primary text-background_sm md:text-[64px] lg:text-background_md 2xl:text-[100px]  self-start">
             Styling
           </h2>
           <p className={pClassName}>
             When deciding on a font family, I settled on Lato which is a
             Sans-serif font. Sans-serif fonts are very popular in anything tech
             related these days as they have a minimalistic and modern looking
-            appearance, a departure from Serif fonts whose flairs on the letters
-            can be elegant and imposing.{" "}
+            appearance, a departure from Serif fonts whose flairs on the
+            characters can be elegant and imposing.{" "}
           </p>
           <p className={pClassName}>
-            After picking a typography, next was picking colors. When picking my
-            primary color, I settled on blue primarily not only because I like
-            it, but also because blue conveys a tech-like feeling.
+            After picking a typography, next was colors. When picking my primary
+            color, I settled on blue primarily not only because I like it, but
+            also because blue conveys a tech-like feeling.
           </p>
           <p className={pClassName}>
             With blue as my primary color, I then decided to do a complementary
             color scheme with orange as my secondary color, since it'd look good
             and be easy to balance. I do think it is a little boring though, and
             if I revisit the color scheme in the future, I might do a
-            split-complementary color scheme and introduce yellow as tertiary
-            color to spice things up.
+            split-complementary color scheme and introduce an orange-red as
+            tertiary color to spice things up.
           </p>
           <p className={pClassName}>
             Lastly, I have an assorted array of black colors that are mixed with
@@ -134,7 +134,7 @@ export default function Portfolio() {
           </p>
           <div className="w-full flex flex-col gap-8">
             <motion.ul
-              className="w-full flex justify-center gap-2 sm:gap-6 mt-16"
+              className="w-full flex justify-center gap-2 sm:gap-12 mt-16"
               variants={colorListVariant}
               initial="initial"
               whileInView="whileInView"
@@ -149,7 +149,7 @@ export default function Portfolio() {
               ))}
             </motion.ul>
             <motion.ul
-              className="w-full flex justify-center gap-2 sm:gap-6"
+              className="w-full flex justify-center gap-2 sm:gap-12"
               variants={colorListVariant}
               initial="initial"
               whileInView="whileInView"
@@ -165,9 +165,9 @@ export default function Portfolio() {
             </motion.ul>
           </div>
         </div>
-        <div className="w-2/3 gap-4 md:gap-8 flex flex-col justify-center items-center mb-24">
-          <h2 className="text-primary text-background_sm md:text-background_md 2xl:text-[119px]">
-            Closing words
+        <div className="w-2/3 max-w-[1150px] gap-4 md:gap-8 flex flex-col justify-center items-center mb-24">
+          <h2 className="text-primary text-background_sm md:text-[64px] lg:text-background_md 2xl:text-[100px] self-start">
+            Thoughts
           </h2>
           <p className={pClassName}>
             At the time of writing this (03-Sep-2022), there isn't anything at

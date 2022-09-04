@@ -11,9 +11,9 @@ const Projects = React.forwardRef((props, ref) => {
       id="projects"
       ref={ref}
     >
-      <div className="text-background_sm md:text-background_md lg:text-background 3xl:text-background_xl text-primary_tone leading-tight -z-10 mb-24">
+      <h2 className="text-h1_sm md:text-h1_md lg:text-h1 xl:text-h1_xl text-primary_tone leading-tight -z-10 mb-24">
         PROJECTS
-      </div>
+      </h2>
       <ul className="w-9/12 flex flex-col items-center gap-16 relative ">
         <ProjectPreview
           isLeft={false}

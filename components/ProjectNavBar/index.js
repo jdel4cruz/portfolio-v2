@@ -20,7 +20,7 @@ function ProjectNavBar({ setIsContactOpen }) {
         initial="Hidden"
         whileHover="Hover"
       >
-        <Link href="https://jdcruz.dev">
+        <Link href={process.env.NEXT_PUBLIC_ROOT_URL}>
           <a className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-white relative">
             Return Home
           </a>

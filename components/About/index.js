@@ -10,9 +10,9 @@ const About = React.forwardRef(({ screenSize }, ref) => {
       id="about"
       ref={ref}
     >
-      <div className="text-background_sm md:text-background_md lg:text-background 3xl:text-background_xl text-primary_tone leading-tight -z-10 md:mb-8">
+      <h2 className="text-h1_sm md:text-h1_md lg:text-h1 xl:text-h1_xl text-primary_tone leading-tight -z-10 md:mb-8">
         ABOUT
-      </div>
+      </h2>
       <div className="w-5/6 xl:w-8/12 3xl:max-w-3xl flex flex-col  gap-8">
         <p>
           My name is <strong>John</strong> and I am a{" "}
