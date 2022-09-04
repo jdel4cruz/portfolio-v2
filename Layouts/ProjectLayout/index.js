@@ -1,0 +1,102 @@
+import React from "react";
+import Head from "next/head";
+import { useState } from "react";
+import { motion, useInView } from "framer-motion";
+
+// Hooks
+import useScreenSize from "../../Hooks/useScreenSize";
+
+// Components
+import StyleList from "../../components/StyleList";
+import ProjectHeader from "../../components/ProjectHeader";
+
+const pClassName = "text-p_sm md:text-p_md lg:text-p ";
+
+function ProjectLayout({ data }) {
+  const screenSize = useScreenSize();
+  const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
+
+  const {
+    overviewText,
+    styleText,
+    thoughtsText,
+    styleColors,
+    projectTitle,
+    projectDescription,
+    projectOneLiner,
+    imgPath,
+  } = data;
+
+  return (
+    <>
+      <Head>
+        <title>{`Project - ${projectTitle}`}</title>
+        <meta name="description" content={projectDescription} />
+        <meta name="author" content="John De La Cruz" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
+
+      <div
+        className={`relative w-screen pb-12 flex flex-col items-center gap-4 md:gap-12 ${imgPath} bg-cover bg-center after:absolute after:w-full after:h-full after:bg-black after:opacity-75`}
+      >
+        <ProjectHeader
+          screenSize={screenSize}
+          setIsContactOpen={setIsContactOpen}
+          setIsNavMenuOpen={setIsNavMenuOpen}
+        />
+        <div className="w-2/3 flex flex-col justify-end start z-10">
+          <h1 className="text-white ">{projectTitle}</h1>
+          <h2 className="text-white">{projectOneLiner}</h2>
+        </div>
+      </div>
+      <div className="w-screen max-w-full min-h-screen flex flex-col gap-8 md:gap-24 items-center justify-center mt-20">
+        <div className="w-2/3 max-w-[1150px] gap-4 md:gap-8 flex flex-col justify-center items-center ">
+          <h2 className="text-primary text-background_sm md:text-[64px] lg:text-background_md 3xl:text-[100px]">
+            Overview
+          </h2>
+          {overviewText.map((paragraph) => (
+            <p className={pClassName}>{paragraph}</p>
+          ))}
+        </div>
+        <div className="w-2/3 max-w-[1150px] gap-8 flex flex-col justify-center items-center">
+          <h2 className="text-primary text-background_sm md:text-[64px] lg:text-background_md 2xl:text-[100px]">
+            Styling
+          </h2>
+          {styleText &&
+            styleText.map((paragraph) => (
+              <p className={pClassName}>{paragraph}</p>
+            ))}
+          <div className="w-full flex flex-col gap-8">
+            {styleColors &&
+              styleColors.map((colorList, i) => (
+                <StyleList key={i}>{colorList}</StyleList>
+              ))}
+          </div>
+        </div>
+        <div className="w-2/3 max-w-[1150px] gap-4 md:gap-8 flex flex-col justify-center items-center mb-24">
+          <h2 className="text-primary text-background_sm md:text-[64px] lg:text-background_md 2xl:text-[100px]">
+            Thoughts
+          </h2>
+          {thoughtsText &&
+            thoughtsText.map((paragraph) => (
+              <p className={pClassName}>{paragraph}</p>
+            ))}
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default ProjectLayout;
