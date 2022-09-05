@@ -70,21 +70,24 @@ function ProjectLayout({ data }) {
             <p className={pClassName}>{paragraph}</p>
           ))}
         </div>
-        <div className="w-2/3 max-w-[1150px] gap-8 flex flex-col justify-center items-center">
-          <h2 className="text-primary text-background_sm md:text-[64px] lg:text-background_md 2xl:text-[100px]">
-            Styling
-          </h2>
-          {styleText &&
-            styleText.map((paragraph) => (
-              <p className={pClassName}>{paragraph}</p>
-            ))}
-          <div className="w-full flex flex-col gap-8">
-            {styleColors &&
-              styleColors.map((colorList, i) => (
-                <StyleList key={i}>{colorList}</StyleList>
+        {styleText && (
+          <div className="w-2/3 max-w-[1150px] gap-8 flex flex-col justify-center items-center">
+            <h2 className="text-primary text-background_sm md:text-[64px] lg:text-background_md 2xl:text-[100px]">
+              Styling
+            </h2>
+            {styleText &&
+              styleText.map((paragraph) => (
+                <p className={pClassName}>{paragraph}</p>
               ))}
+            {styleColors && (
+              <div className="w-full flex flex-col gap-8">
+                {styleColors.map((colorList, i) => (
+                  <StyleList key={i}>{colorList}</StyleList>
+                ))}
+              </div>
+            )}
           </div>
-        </div>
+        )}
         <div className="w-2/3 max-w-[1150px] gap-4 md:gap-8 flex flex-col justify-center items-center mb-24">
           <h2 className="text-primary text-background_sm md:text-[64px] lg:text-background_md 2xl:text-[100px]">
             Thoughts
