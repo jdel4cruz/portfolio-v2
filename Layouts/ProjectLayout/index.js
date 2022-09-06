@@ -66,8 +66,10 @@ function ProjectLayout({ data }) {
           <h2 className="text-primary text-background_sm md:text-[64px] lg:text-background_md 3xl:text-[100px]">
             Overview
           </h2>
-          {overviewText.map((paragraph) => (
-            <p className={pClassName}>{paragraph}</p>
+          {overviewText.map((paragraph, i) => (
+            <p className={pClassName} key={i}>
+              {paragraph}
+            </p>
           ))}
         </div>
         {styleText && (
@@ -76,8 +78,10 @@ function ProjectLayout({ data }) {
               Styling
             </h2>
             {styleText &&
-              styleText.map((paragraph) => (
-                <p className={pClassName}>{paragraph}</p>
+              styleText.map((paragraph, i) => (
+                <p className={pClassName} key={i}>
+                  {paragraph}
+                </p>
               ))}
             {styleColors && (
               <div className="w-full flex flex-col gap-8">
@@ -93,8 +97,10 @@ function ProjectLayout({ data }) {
             Thoughts
           </h2>
           {thoughtsText &&
-            thoughtsText.map((paragraph) => (
-              <p className={pClassName}>{paragraph}</p>
+            thoughtsText.map((paragraph, i) => (
+              <p className={pClassName} key={i}>
+                {paragraph}
+              </p>
             ))}
         </div>
       </div>

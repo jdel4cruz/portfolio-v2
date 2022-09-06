@@ -29,7 +29,7 @@ const overviewText = [
   "Lastly, the majority of the animations on this website are created using Framer Motion, an animation library for React applications. With the various features it offers, it makes creating complex animations between nested components and sibling components seamless.",
 ];
 
-const stylingText = [
+const styleText = [
   "When deciding on a font family, I settled on Lato which is a Sans-serif font. Sans-serif fonts are very popular in anything tech related these days as they have a minimalistic and modern looking appearance, a departure from Serif fonts whose flairs on the characters can be elegant and imposing.",
   "After picking a typography, next was colors. When picking my primary color, I settled on blue primarily not only because I like it, but also because blue conveys a tech-like feeling.",
   "With blue as my primary color, I then decided to do a complementary color scheme with orange as my secondary color, since it'd look good and be easy to balance. I do think it is a little boring though, and if I revisit the color scheme in the future, I might do a split-complementary color scheme and introduce an orange-red as tertiary color to spice things up.",
@@ -42,7 +42,7 @@ const thoughtsText = [
 
 const data = {
   overviewText,
-  stylingText,
+  styleText,
   thoughtsText,
   styleColors,
   imgPath,
