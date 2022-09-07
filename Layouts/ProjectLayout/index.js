@@ -10,7 +10,7 @@ import useScreenSize from "../../Hooks/useScreenSize";
 import StyleList from "../../components/StyleList";
 import ProjectHeader from "../../components/ProjectHeader";
 
-const pClassName = "text-p_sm md:text-p_md lg:text-p ";
+const pClassName = "text-p_sm md:text-p_md ";
 
 function ProjectLayout({ data }) {
   const screenSize = useScreenSize();
@@ -57,13 +57,17 @@ function ProjectLayout({ data }) {
           setIsNavMenuOpen={setIsNavMenuOpen}
         />
         <div className="w-2/3 flex flex-col justify-end start z-10">
-          <h1 className="text-white ">{projectTitle}</h1>
-          <h2 className="text-white">{projectOneLiner}</h2>
+          <h1 className="text-h1_sm md:text-h1_md lg:text-h1 text-white">
+            {projectTitle}
+          </h1>
+          <h2 className="text-h2_sm md:text-h2_md lg:text-h2 text-white">
+            {projectOneLiner}
+          </h2>
         </div>
       </div>
       <div className="w-screen max-w-full min-h-screen flex flex-col gap-8 md:gap-24 items-center justify-center mt-20">
         <div className="w-2/3 max-w-[1150px] gap-4 md:gap-8 flex flex-col justify-center items-center ">
-          <h2 className="text-primary text-background_sm md:text-[64px] lg:text-background_md 3xl:text-[100px]">
+          <h2 className="text-primary text-background_sm md:text-[64px] lg:text-background_md">
             Overview
           </h2>
           {overviewText.map((paragraph, i) => (
@@ -74,7 +78,7 @@ function ProjectLayout({ data }) {
         </div>
         {styleText && (
           <div className="w-2/3 max-w-[1150px] gap-8 flex flex-col justify-center items-center">
-            <h2 className="text-primary text-background_sm md:text-[64px] lg:text-background_md 2xl:text-[100px]">
+            <h2 className="text-primary text-background_sm md:text-[64px] lg:text-background_md">
               Styling
             </h2>
             {styleText &&
@@ -93,7 +97,7 @@ function ProjectLayout({ data }) {
           </div>
         )}
         <div className="w-2/3 max-w-[1150px] gap-4 md:gap-8 flex flex-col justify-center items-center mb-24">
-          <h2 className="text-primary text-background_sm md:text-[64px] lg:text-background_md 2xl:text-[100px]">
+          <h2 className="text-primary text-background_sm md:text-[64px] lg:text-background_md">
             Thoughts
           </h2>
           {thoughtsText &&

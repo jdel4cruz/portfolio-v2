@@ -23,21 +23,23 @@ const projectOneLiner = "Focused On Design";
 const imgPath = "bg-[url('/images/JDCruz_Portfolio_Site3.png')]";
 
 const overviewText = [
-  "Going into this project, I was happy with all the different tools I've learned to create websites, but the design was always lacking. And considering my portfolio is there to show off, I decided it was time to redo it.",
-  "When building my website, I decided on using NextJS as my framework for 3 reasons. I'm very comfortable with React, it has a bunch of built in functionality with things like API routes and environment variables, and when it comes time to deploy the application, NextJS lets me deploy the front-end and back-end on one hosting platform.",
-  "For styling, I settled on Tailwind CSS as it's a popular CSS framework and once learned, allows you to get sites up and running lightning fast at the cost of some ridiculously long class names.",
-  "Lastly, the majority of the animations on this website are created using Framer Motion, an animation library for React applications. With the various features it offers, it makes creating complex animations between nested components and sibling components seamless.",
+  "Going into this project, I was happy with all the different tools I've learned to build web applications, but my designs were always lacking. And when looking at my portfolio site, it wasn’t doing its job of showing off my stuff, so it was high time to redo it all together.",
+  "The first thing I considered was my front-end and back-end frameworks I would use for my portfolio, and I settled on NextJS as my framework for 3 reasons. I'm very comfortable with React, it has a bunch of built in functionality with things like API routes and environment variables, and it can serve as both my front-end and back-end framework at the same time.",
+  "Afterwards, I needed to pick some form of styling for my website and I immediately settled on Tailwind CSS. Primarily because it’s been on my plate for a hot minute, but also because it’s a popular CSS framework that once learned, allows you to get sites up and running lightning fast at the cost of some ridiculously long class names.",
+  "Lastly, I wanted to create animations to push my portfolio to the next level. While I know how to use CSS to create basic animations, I’ve always wanted to learn a React animation library and figured this would be a good opportunity. After looking at the top two options, Framer Motion and React Spring, I settled on Framer Motion as it’s much more popular between the two and it seemed simple enough to use.",
 ];
 
 const styleText = [
-  "When deciding on a font family, I settled on Lato which is a Sans-serif font. Sans-serif fonts are very popular in anything tech related these days as they have a minimalistic and modern looking appearance, a departure from Serif fonts whose flairs on the characters can be elegant and imposing.",
-  "After picking a typography, next was colors. When picking my primary color, I settled on blue primarily not only because I like it, but also because blue conveys a tech-like feeling.",
-  "With blue as my primary color, I then decided to do a complementary color scheme with orange as my secondary color, since it'd look good and be easy to balance. I do think it is a little boring though, and if I revisit the color scheme in the future, I might do a split-complementary color scheme and introduce an orange-red as tertiary color to spice things up.",
-  "Lastly, I have an assorted array of black colors that are mixed with a small amount of blue in order to create a sense of unity between them and the primary color.",
+  "Unlike with my previous projects, I had been studying design and wanted to put some thought behind my choices for things like colors, font, etc. instead of just fiddling around until I felt it “looks good”.",
+  "When deciding on a font, I settled on Lato which is a Sans-serif font. Sans-serif fonts are very popular in anything tech related these days as they have a minimalistic and modern looking appearance, a departure from Serif fonts which can be potentially imposing and give a feeling of elegance.",
+  "After picking a font, the next thing I tackled was colors. When picking my primary color for my color harmony, I settled on a dark blue. Primarily because blue conveys a tech-like feeling, but also because I really like the color in general.",
+  "With blue as my primary color, I then decided to do a complementary color harmony with an orange/yellow  as my secondary color, since it'd look good and be easy to balance. I do think it is a little boring though, and if I revisit the color scheme in the future, I might do a split-complementary color scheme and introduce an orange-red as tertiary color to spice things up.",
+  "Lastly, I have an assorted array of black colors with a bit of blue mixed in. It’s subtle, but it helps bring a sense of unity between the black colors and the primary color of the portfolio.",
 ];
 
 const thoughtsText = [
-  "At the point of writing this (03-Sep-2022), I don't have anything I would go back and change at this time. Unlike my previous projects which were primarily a learning experience, which resulted in me avoiding scope creep in order to finish what I initially planned out, I didn't take many concessions during the creation of this website. Of course hindsight is 20/20 and I'll probably look back and find it lacking in the future, but for now I'm content with what I've made.",
+  "At the point of writing this (03-Sep-2022), I don't have anything I would go back and change at this time. With my previous projects, I had a scope of things I wanted to achieve with them, and avoided scope creep. With anything you work on, they can always be improved and sometimes you just need to settle and say we’ll do better next time.",
+  "With this portfolio, I didn’t take any concessions. If I was working on something, and realized a way I could improve it, I made it happen. So as of right now this portfolio is built to the best of my ability. Of course hindsight is 20/20 and I'll probably look back and find it lacking in the future, but for now I'm content with what I've made.",
 ];
 
 const data = {

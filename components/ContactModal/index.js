@@ -45,7 +45,7 @@ const overlayVariant = {
 
 const emailResponseVariant = {
   initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { delay: 0.25 } },
+  animate: { opacity: 1, transition: { delay: 0.5 } },
 };
 
 const defaultFormValues = { name: "", email: "", message: "" };
@@ -65,14 +65,14 @@ function ContactModal({ isOpen, setIsOpen }) {
   });
 
   useEffect(() => {
-    if (!sendingMessage) {
+    if (emailResponse) {
       setTimeout(() => {
         reset(defaultFormValues);
         setEmailResponse(null);
         setIsOpen(false);
       }, 3000);
     }
-  }, [sendingMessage]);
+  }, [emailResponse]);
 
   const onSubmit = async (data) => {
     setSendingMessage(true);
