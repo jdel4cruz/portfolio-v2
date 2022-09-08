@@ -37,17 +37,18 @@ function ProjectNavBar({ setIsContactOpen, setIsProjectsOpen }) {
         initial="Hidden"
         whileHover="Hover"
       >
-        <button
-          className="md:text-h3_md lg:text-h3 text-white"
-          onClick={() => setIsProjectsOpen(true)}
-        >
-          Projects
-        </button>
+        <Link href={`${process.env.NEXT_PUBLIC_ROOT_URL}/#projects`}>
+          <a className="md:text-h3_md lg:text-h3 text-white relative">
+            Projects
+          </a>
+        </Link>
+
         <motion.div
           className="absolute bottom-0 left-0 w-full h-1 bg-secondary"
           variants={underlineVariant}
         />
       </motion.li>
+
       <motion.li
         className="w-fit pb-1 relative overflow-hidden"
         variants={liVariant}

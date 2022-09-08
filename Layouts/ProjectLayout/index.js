@@ -10,6 +10,7 @@ import useScreenSize from "../../Hooks/useScreenSize";
 import StyleList from "../../components/StyleList";
 import ProjectHeader from "../../components/ProjectHeader";
 import ContactModal from "../../components/ContactModal";
+import ProjectNavMenu from "../../components/ProjectNavMenu";
 
 const pClassName = "text-p_sm md:text-p_md ";
 
@@ -51,6 +52,14 @@ function ProjectLayout({ data }) {
         />
       </Head>
       <ContactModal isOpen={isContactOpen} setIsOpen={setIsContactOpen} />
+      {screenSize[0] < 1024 && (
+        <ProjectNavMenu
+          isOpen={isNavMenuOpen}
+          setIsOpen={setIsNavMenuOpen}
+          setIsContactOpen={setIsContactOpen}
+        />
+      )}
+
       <div
         className={`relative w-full pb-12 flex flex-col items-center gap-4 md:gap-12 ${imgPath} bg-cover bg-center after:absolute after:w-full after:h-full after:bg-black after:opacity-75`}
       >
