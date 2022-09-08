@@ -11,7 +11,7 @@ const underlineVariant = {
   Hover: { x: 0 },
 };
 
-function ProjectNavBar({ setIsContactOpen }) {
+function ProjectNavBar({ setIsContactOpen, setIsProjectsOpen }) {
   return (
     <ul className="flex gap-8 items-center lg:gap-16">
       <motion.li
@@ -21,7 +21,7 @@ function ProjectNavBar({ setIsContactOpen }) {
         whileHover="Hover"
       >
         <Link href={process.env.NEXT_PUBLIC_ROOT_URL}>
-          <a className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-white relative">
+          <a className="md:text-h3_md lg:text-h3 text-white relative">
             Return Home
           </a>
         </Link>
@@ -38,8 +38,8 @@ function ProjectNavBar({ setIsContactOpen }) {
         whileHover="Hover"
       >
         <button
-          className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-white"
-          onClick={() => setIsContactOpen(true)}
+          className="md:text-h3_md lg:text-h3 text-white"
+          onClick={() => setIsProjectsOpen(true)}
         >
           Projects
         </button>
@@ -55,7 +55,7 @@ function ProjectNavBar({ setIsContactOpen }) {
         whileHover="Hover"
       >
         <button
-          className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-white"
+          className="md:text-h3_md lg:text-h3 text-white"
           onClick={() => setIsContactOpen(true)}
         >
           Contact

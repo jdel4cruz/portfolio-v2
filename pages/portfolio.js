@@ -22,12 +22,14 @@ const projectDescription = "An overview of my portfolio website";
 const projectOneLiner = "Focused On Design";
 const imgPath = "bg-[url('/images/JDCruz_Portfolio_Site3.png')]";
 
-const overviewText = [
+const goalsText = [
   "Going into this project, I was happy with all the different tools I've learned to build web applications, but my designs were always lacking. And when looking at my portfolio site, it wasn’t doing its job of showing off my stuff, so it was high time to redo it all together.",
   "The first thing I considered was my front-end and back-end frameworks I would use for my portfolio, and I settled on NextJS as my framework for 3 reasons. I'm very comfortable with React, it has a bunch of built in functionality with things like API routes and environment variables, and it can serve as both my front-end and back-end framework at the same time.",
   "Afterwards, I needed to pick some form of styling for my website and I immediately settled on Tailwind CSS. Primarily because it’s been on my plate for a hot minute, but also because it’s a popular CSS framework that once learned, allows you to get sites up and running lightning fast at the cost of some ridiculously long class names.",
   "Lastly, I wanted to create animations to push my portfolio to the next level. While I know how to use CSS to create basic animations, I’ve always wanted to learn a React animation library and figured this would be a good opportunity. After looking at the top two options, Framer Motion and React Spring, I settled on Framer Motion as it’s much more popular between the two and it seemed simple enough to use.",
 ];
+
+const processText = [""];
 
 const styleText = [
   "Unlike with my previous projects, I had been studying design and wanted to put some thought behind my choices for things like colors, font, etc. instead of just fiddling around until I felt it “looks good”.",
@@ -43,8 +45,9 @@ const thoughtsText = [
 ];
 
 const data = {
-  overviewText,
+  goalsText,
   styleText,
+  processText,
   thoughtsText,
   styleColors,
   imgPath,

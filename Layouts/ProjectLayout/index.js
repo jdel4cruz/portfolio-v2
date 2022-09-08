@@ -9,18 +9,21 @@ import useScreenSize from "../../Hooks/useScreenSize";
 // Components
 import StyleList from "../../components/StyleList";
 import ProjectHeader from "../../components/ProjectHeader";
+import ContactModal from "../../components/ContactModal";
 
 const pClassName = "text-p_sm md:text-p_md ";
 
 function ProjectLayout({ data }) {
   const screenSize = useScreenSize();
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
 
   const {
-    overviewText,
-    styleText,
+    goalsText,
+    processText,
     thoughtsText,
+    styleText,
     styleColors,
     projectTitle,
     projectDescription,
@@ -47,13 +50,14 @@ function ProjectLayout({ data }) {
           rel="stylesheet"
         />
       </Head>
-
+      <ContactModal isOpen={isContactOpen} setIsOpen={setIsContactOpen} />
       <div
-        className={`relative w-screen pb-12 flex flex-col items-center gap-4 md:gap-12 ${imgPath} bg-cover bg-center after:absolute after:w-full after:h-full after:bg-black after:opacity-75`}
+        className={`relative w-full pb-12 flex flex-col items-center gap-4 md:gap-12 ${imgPath} bg-cover bg-center after:absolute after:w-full after:h-full after:bg-black after:opacity-75`}
       >
         <ProjectHeader
           screenSize={screenSize}
           setIsContactOpen={setIsContactOpen}
+          setIsProjectsOpen={setIsProjectsOpen}
           setIsNavMenuOpen={setIsNavMenuOpen}
         />
         <div className="w-2/3 flex flex-col justify-end start z-10">
@@ -68,18 +72,18 @@ function ProjectLayout({ data }) {
       <div className="w-screen max-w-full min-h-screen flex flex-col gap-8 md:gap-24 items-center justify-center mt-20">
         <div className="w-2/3 max-w-[1150px] gap-4 md:gap-8 flex flex-col justify-center items-center ">
           <h2 className="text-primary text-background_sm md:text-[64px] lg:text-background_md">
-            Overview
+            Goals
           </h2>
-          {overviewText.map((paragraph, i) => (
+          {goalsText.map((paragraph, i) => (
             <p className={pClassName} key={i}>
               {paragraph}
             </p>
           ))}
         </div>
-        {styleText && (
+        {processText && (
           <div className="w-2/3 max-w-[1150px] gap-8 flex flex-col justify-center items-center">
             <h2 className="text-primary text-background_sm md:text-[64px] lg:text-background_md">
-              Styling
+              Process
             </h2>
             {styleText &&
               styleText.map((paragraph, i) => (
@@ -94,6 +98,12 @@ function ProjectLayout({ data }) {
                 ))}
               </div>
             )}
+            {processText &&
+              processText.map((paragraph, i) => (
+                <p className={pClassName} key={i}>
+                  {paragraph}
+                </p>
+              ))}
           </div>
         )}
         <div className="w-2/3 max-w-[1150px] gap-4 md:gap-8 flex flex-col justify-center items-center mb-24">

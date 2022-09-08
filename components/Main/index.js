@@ -19,6 +19,10 @@ const Main = React.forwardRef((props, ref) => {
           reality. Currently open to freelance opportunities.
         </p>
         <Socials />
+        <p className="mt-8 text-primary_tint">
+          This portfolio is currently being updated, so some features may not
+          work as expected. Sorry for the inconvenience!
+        </p>
       </div>
     </div>
   );
