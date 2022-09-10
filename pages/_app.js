@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import { useState, useEffect, useRef, createContext, useContext } from "react";
 import { useRouter } from "next/router";
 
-import PageTransition from "../components/layouts/PageTransition";
+import PageTransition from "../layouts/PageTransition";
 
 const RouteContext = createContext();
 export const useRouteContext = () => {
@@ -18,12 +18,9 @@ function MyApp({ Component, pageProps }) {
     const handleComplete = (url) =>
       url === router.asPath && setIsRouteChanging(false);
 
-    router.beforePopState(({ as }) => {
+    router.beforePopState(({ as, url }) => {
       if (router.pathname === "/") {
-        if (router.asPath === "/") {
-          return true;
-        }
-        if (router.asPath.includes("#") && as.includes("#")) {
+        if (url.includes("#") || url === "/") {
           return true;
         }
       }
@@ -35,6 +32,7 @@ function MyApp({ Component, pageProps }) {
       }
       return true;
     });
+
     router.events.on("routeChangeComplete", handleComplete);
     router.events.on("routeChangeError", handleComplete);
 

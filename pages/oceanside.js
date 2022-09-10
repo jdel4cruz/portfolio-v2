@@ -1,4 +1,4 @@
-import ProjectLayout from "../components/layouts/ProjectLayout";
+import ProjectLayout from "../layouts/ProjectLayout";
 
 const projectTitle = "OceanSide";
 const projectDescription = "An overview of my faux cafe website";
