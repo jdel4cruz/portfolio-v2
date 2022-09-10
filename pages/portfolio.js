@@ -1,4 +1,4 @@
-import ProjectLayout from "../Layouts/ProjectLayout";
+import ProjectLayout from "../layouts/ProjectLayout";
 
 const styleColors = [
   [
