@@ -4,12 +4,7 @@ import Logo from "../../assets/svgs/Logo_White.svg";
 
 import ProjectNavBar from "../ProjectNavBar";
 
-function ProjectHeader({
-  screenSize,
-  setIsContactOpen,
-  setIsProjectsOpen,
-  setIsNavMenuOpen,
-}) {
+function ProjectHeader({ screenSize, setIsContactOpen, setIsNavMenuOpen }) {
   return (
     <div
       className={`w-full flex justify-center items-center px-8 md:px-16 py-6 pb-4 z-10`}
@@ -25,10 +20,7 @@ function ProjectHeader({
         </div>
 
         {screenSize[0] >= 1024 ? (
-          <ProjectNavBar
-            setIsContactOpen={setIsContactOpen}
-            setIsProjectsOpen={setIsProjectsOpen}
-          />
+          <ProjectNavBar setIsContactOpen={setIsContactOpen} />
         ) : (
           <button onClick={() => setIsNavMenuOpen(true)}>
             <svg

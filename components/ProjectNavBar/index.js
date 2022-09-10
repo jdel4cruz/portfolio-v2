@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+// Hooks
+import usePageTransition from "../../Hooks/usePageTransition";
+
 const liVariant = {
   Hidden: {},
   Hover: {},
@@ -11,7 +14,9 @@ const underlineVariant = {
   Hover: { x: 0 },
 };
 
-function ProjectNavBar({ setIsContactOpen, setIsProjectsOpen }) {
+function ProjectNavBar({ setIsContactOpen }) {
+  const { routeChange } = usePageTransition();
+
   return (
     <ul className="flex gap-8 items-center lg:gap-16">
       <motion.li
@@ -21,7 +26,10 @@ function ProjectNavBar({ setIsContactOpen, setIsProjectsOpen }) {
         whileHover="Hover"
       >
         <Link href={process.env.NEXT_PUBLIC_ROOT_URL}>
-          <a className="md:text-h3_md lg:text-h3 text-white relative">
+          <a
+            className="md:text-h3_md lg:text-h3 text-white relative"
+            onClick={(e) => routeChange(e, process.env.NEXT_PUBLIC_ROOT_URL)}
+          >
             Return Home
           </a>
         </Link>
@@ -38,7 +46,12 @@ function ProjectNavBar({ setIsContactOpen, setIsProjectsOpen }) {
         whileHover="Hover"
       >
         <Link href={`${process.env.NEXT_PUBLIC_ROOT_URL}/#projects`}>
-          <a className="md:text-h3_md lg:text-h3 text-white relative">
+          <a
+            className="md:text-h3_md lg:text-h3 text-white relative"
+            onClick={(e) =>
+              routeChange(e, `${process.env.NEXT_PUBLIC_ROOT_URL}/#projects`)
+            }
+          >
             Projects
           </a>
         </Link>

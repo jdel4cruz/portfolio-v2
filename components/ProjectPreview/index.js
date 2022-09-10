@@ -6,6 +6,9 @@ import Link from "next/dist/client/link";
 import Github from "../../assets/svgs/github_white.svg";
 import ExternalLink from "../../assets/svgs/box-arrow-up-right_white.svg";
 
+// Hooks
+import usePageTransition from "../../Hooks/usePageTransition";
+
 function ProjectPreview({
   isLeft,
   image,
@@ -15,6 +18,8 @@ function ProjectPreview({
   githubURL,
   projectURL,
 }) {
+  const { routeChange } = usePageTransition();
+
   return (
     <li
       className={`w-5/6 md:w-[600px] xl:w-[960px] h-[450px] xl:h-[480px] ${
@@ -51,7 +56,7 @@ function ProjectPreview({
         } -translate-y-8 md:-translate-y-12 xl:-translate-y-16 bg-secondary`}
       />
       <Link href={route}>
-        <div className="w-full h-full">
+        <div className="w-full h-full" onClick={(e) => routeChange(e, route)}>
           <Image src={image} layout="fill" objectFit="cover" priority />
           <div className="w-full h-full bg-black opacity-75" />
           <div

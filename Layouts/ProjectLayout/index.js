@@ -17,7 +17,6 @@ const pClassName = "text-p_sm md:text-p_md ";
 function ProjectLayout({ data }) {
   const screenSize = useScreenSize();
   const [isContactOpen, setIsContactOpen] = useState(false);
-  const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
 
   const {
@@ -66,7 +65,6 @@ function ProjectLayout({ data }) {
         <ProjectHeader
           screenSize={screenSize}
           setIsContactOpen={setIsContactOpen}
-          setIsProjectsOpen={setIsProjectsOpen}
           setIsNavMenuOpen={setIsNavMenuOpen}
         />
         <div className="w-2/3 flex flex-col justify-end start z-10">

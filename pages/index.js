@@ -15,7 +15,7 @@ import NavMenu from "../components/NavMenu";
 import useScreenSize from "../Hooks/useScreenSize";
 
 // Contexts
-export const ViewContext = createContext();
+const ViewContext = createContext();
 export const useViewContext = () => {
   return useContext(ViewContext);
 };

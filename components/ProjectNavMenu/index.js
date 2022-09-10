@@ -1,9 +1,13 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 // Components
 import CloseIcon from "../CloseIcon";
+
+// Hooks
+import usePageTransition from "../../Hooks/usePageTransition";
 
 const menuVariant = {
   initial: { x: "100%" },
@@ -30,13 +34,19 @@ const barVariant = {
 };
 
 function ProjectNavMenu({ isOpen, setIsOpen, setIsContactOpen }) {
+  const { routeChange } = usePageTransition();
   const handleClose = () => setIsOpen(false);
+  const menuRef = useRef();
+
+  useEffect(() => {
+    return () => clearTimeout(menuRef.current);
+  }, []);
 
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed top-0 w-full h-full flex flex-col gap-8 justify-center z-50 bg-secondary"
+          className="fixed top-0 w-full h-full flex flex-col gap-8 justify-center z-40 bg-secondary"
           variants={menuVariant}
           initial="initial"
           animate="animate"
@@ -86,7 +96,10 @@ function ProjectNavMenu({ isOpen, setIsOpen, setIsContactOpen }) {
               <Link href={process.env.NEXT_PUBLIC_ROOT_URL}>
                 <a
                   className=" flex justify-center w-full text-white text-h1"
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    routeChange(e, process.env.NEXT_PUBLIC_ROOT_URL);
+                    menuRef.current = setTimeout(() => setIsOpen(false), 1000);
+                  }}
                 >
                   Return Home
                 </a>
@@ -96,7 +109,13 @@ function ProjectNavMenu({ isOpen, setIsOpen, setIsContactOpen }) {
               <Link href={`${process.env.NEXT_PUBLIC_ROOT_URL}/#projects`}>
                 <a
                   className=" flex justify-center w-full text-white text-h1"
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    routeChange(
+                      e,
+                      `${process.env.NEXT_PUBLIC_ROOT_URL}/#projects`
+                    );
+                    menuRef.current = setTimeout(() => setIsOpen(false), 1000);
+                  }}
                 >
                   Projects
                 </a>
