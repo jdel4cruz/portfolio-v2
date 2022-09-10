@@ -4,13 +4,13 @@ import { useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 // Hooks
-import useScreenSize from "../../Hooks/useScreenSize";
+import useScreenSize from "../../../Hooks/useScreenSize";
 
 // Components
-import StyleList from "../../components/StyleList";
-import ProjectHeader from "../../components/ProjectHeader";
-import ContactModal from "../../components/ContactModal";
-import ProjectNavMenu from "../../components/ProjectNavMenu";
+import StyleList from "../../StyleList";
+import ProjectHeader from "../../ProjectHeader";
+import ContactModal from "../../ContactModal";
+import ProjectNavMenu from "../../ProjectNavMenu";
 
 const pClassName = "text-p_sm md:text-p_md ";
 

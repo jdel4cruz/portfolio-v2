@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import { useState, useEffect, useRef, createContext, useContext } from "react";
 import { useRouter } from "next/router";
 
-import PageTransition from "../Layouts/PageTransition";
+import PageTransition from "../components/layouts/PageTransition";
 
 const RouteContext = createContext();
 export const useRouteContext = () => {
