@@ -31,10 +31,10 @@ function StyleItem({ colorCode, className }) {
           className={`w-full aspect-square shadow-xl ${className}`}
           variants={colorContentVariant}
         />
-        <motion.p
+        {/* <motion.p
           className={pClassName}
           variants={colorContentVariant}
-        >{`${colorCode}`}</motion.p>
+        >{`${colorCode}`}</motion.p> */}
       </motion.div>
     </motion.li>
   );

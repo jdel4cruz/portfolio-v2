@@ -7,13 +7,12 @@ import StyleItem from "../StyleItem";
 const colorListVariant = {
   initial: {},
   whileInView: { transition: { staggerChildren: 0.1 } },
-  viewport: { once: true },
 };
 
 function StyleList({ children }) {
   return (
     <motion.ul
-      className="w-full flex justify-center gap-2 sm:gap-12 mt-16"
+      className="w-full flex justify-between mt-16"
       variants={colorListVariant}
       initial="initial"
       whileInView="whileInView"

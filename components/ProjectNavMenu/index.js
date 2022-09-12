@@ -101,7 +101,7 @@ function ProjectNavMenu({ isOpen, setIsOpen, setIsContactOpen }) {
                     menuRef.current = setTimeout(() => setIsOpen(false), 1000);
                   }}
                 >
-                  Return Home
+                  Home
                 </a>
               </Link>
             </li>
