@@ -5,12 +5,27 @@ import { motion, AnimateSharedLayout } from "framer-motion";
 // Contexts
 import { useViewContext } from "../../pages/index";
 
+const listVariant = {
+  initial: {},
+  animate: { transition: { staggerChildren: 0.1, delayChildren: 0.25 } },
+};
+
+const itemVariant = {
+  initial: { opacity: 0, y: "-50%" },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 function NavBar({ setIsContactOpen }) {
   const { isInView, setIsInView } = useViewContext();
 
   return (
-    <ul className="flex gap-8 items-center lg:gap-16">
-      <li className="w-fit pb-1 relative">
+    <motion.ul
+      className="flex gap-8 items-center lg:gap-16"
+      variants={listVariant}
+      initial="initial"
+      animate="animate"
+    >
+      <motion.li className="w-fit pb-1 relative" variants={itemVariant}>
         <Link href="#home">
           <a className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary relative">
             Home
@@ -22,8 +37,8 @@ function NavBar({ setIsContactOpen }) {
             layoutId="underline"
           />
         )}
-      </li>
-      <li className="w-fit pb-1 relative">
+      </motion.li>
+      <motion.li className="w-fit pb-1 relative" variants={itemVariant}>
         <Link href="#about">
           <a className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary">
             About
@@ -35,8 +50,8 @@ function NavBar({ setIsContactOpen }) {
             layoutId="underline"
           />
         )}
-      </li>
-      <li className="w-fit pb-1 relative">
+      </motion.li>
+      <motion.li className="w-fit pb-1 relative" variants={itemVariant}>
         <Link href="#projects">
           <a className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary">
             Projects
@@ -48,8 +63,8 @@ function NavBar({ setIsContactOpen }) {
             layoutId="underline"
           />
         )}
-      </li>
-      <li className="w-fit pb-1 relative">
+      </motion.li>
+      <motion.li className="w-fit pb-1 relative" variants={itemVariant}>
         <button
           className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary"
           onClick={() => setIsContactOpen(true)}
@@ -62,8 +77,8 @@ function NavBar({ setIsContactOpen }) {
             layoutId="underline"
           />
         )}
-      </li>
-    </ul>
+      </motion.li>
+    </motion.ul>
   );
 }
 

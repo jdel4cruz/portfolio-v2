@@ -1,30 +1,42 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import github from "../../assets/svgs/icons8-github.svg";
 import linkedin from "../../assets/svgs/icons8-linkedin.svg";
-import upwork from "../../assets/svgs/icons8-upwork.svg";
-import fiverr from "../../assets/svgs/icons8-fiverr.svg";
+
+const listVariant = {
+  initial: {},
+  animate: { transition: { staggerChildren: 0.1, delayChildren: 0.5 } },
+};
+
+const iconVariant = {
+  initial: { opacity: 0, y: "25%" },
+  animate: { opacity: 1, y: 0, transition: { type: "tween", duration: 0.7 } },
+};
 
 function Socials() {
   return (
-    <ul className="flex gap-8  h-8 md:h-16 lg:h-20 3xl:h-24">
-      <li className="h-16 lg:h-20 3xl:h-24 aspect-square relative">
+    <motion.ul
+      className="flex gap-8  h-8 md:h-16 lg:h-20 3xl:h-24"
+      variants={listVariant}
+    >
+      <motion.li
+        className="h-16 lg:h-20 3xl:h-24 aspect-square relative"
+        variants={iconVariant}
+      >
         <a href="https://github.com/jdel4cruz">
           <Image src={github} layout="fill" objectFit="contain" />
         </a>
-      </li>
-      <li className="h-16 lg:h-20 3xl:h-24 aspect-square relative">
+      </motion.li>
+      <motion.li
+        className="h-16 lg:h-20 3xl:h-24 aspect-square relative"
+        variants={iconVariant}
+      >
         <a href="https://www.linkedin.com/in/john-de-la-cruz-160bb045/">
           <Image src={linkedin} layout="fill" objectFit="contain" />
         </a>
-      </li>
-      {/* <li className=" h-8 md:h-16 lg:h-20 3xl:h-24 aspect-square relative">
-        <Image src={upwork} layout="fill" objectFit="contain" />
-      </li>
-      <li className=" h-8 md:h-16 lg:h-20 3xl:h-24 aspect-square relative">
-        <Image src={fiverr} layout="fill" objectFit="contain" />
-      </li> */}
-    </ul>
+      </motion.li>
+    </motion.ul>
   );
 }
 
