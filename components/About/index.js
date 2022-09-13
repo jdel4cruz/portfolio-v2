@@ -1,5 +1,41 @@
 import React from "react";
-import { useState } from "react";
+import { motion } from "framer-motion";
+
+const sectionVariant = {
+  initial: {},
+  whileInView: {},
+};
+
+const sectionTextVariant = {
+  initial: { opacity: 0, y: "50%" },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "tween", duration: 0.5 },
+  },
+};
+
+const techItems = [
+  "NextJS",
+  "Tailwind",
+  "Framer Motion",
+  "WordPress",
+  "Material UI",
+  "TypeScript",
+  "NodeJS",
+  "ExpressJS",
+];
+
+const sectionListVariant = {
+  initial: {},
+  whileInView: { transition: { staggerChildren: 0.1 } },
+};
+
+const sectionItemVariant = {
+  initial: { opacity: 0, y: "50%" },
+  whileInView: { opacity: 1, y: 0 },
+};
+
 const techItem =
   "before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-1/4 before:aspect-square before:bg-primary relative items-center tracking-tighter md:text-[20px] lg:text-[26px] 3xl:text-p_xl  text-black_75 pl-6 w-1/2 sm:w-1/4";
 
@@ -10,77 +46,128 @@ const About = React.forwardRef(({ screenSize }, ref) => {
       id="about"
       ref={ref}
     >
-      <h2 className="text-h1_sm md:text-h1_md lg:text-h1 xl:text-h1_xl text-primary_tone leading-tight -z-10 md:mb-8">
+      <motion.h2
+        className="text-h1_sm md:text-h1_md lg:text-h1 xl:text-h1_xl text-primary_tone leading-tight -z-10 md:mb-8"
+        variants={sectionTextVariant}
+        initial="initial"
+        whileInView="whileInView"
+        viewport={{ once: true, amount: 0.5 }}
+      >
         ABOUT
-      </h2>
+      </motion.h2>
       <div className="w-5/6 xl:w-8/12 3xl:max-w-3xl flex flex-col  gap-8">
-        <p>
+        <motion.p
+          variants={sectionTextVariant}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true, amount: 0.5 }}
+        >
           My name is <strong>John</strong> and I am a{" "}
           <strong>former engineer</strong> who is now a{" "}
           <strong>self-taught web developer</strong>. Back in May of 2020, I
           decided to step away from engineering in order to find a career path
           that was more for me. After exploring a variety of interests, I landed
           on web development and I’ve been hooked ever since.
-        </p>
-        <p>
+        </motion.p>
+        <motion.p
+          variants={sectionTextVariant}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true, amount: 0.5 }}
+        >
           As of late, I’ve begun focusing more on studying{" "}
           <strong>UI/UX design</strong> in order to make better use of the
           various technologies I’ve learned over the past year. Listed below are
           some of the technologies that I’ve used most recently.
-        </p>
+        </motion.p>
         {screenSize[0] >= 768 ? (
-          <div>
+          <motion.div
+            variants={sectionListVariant}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, amount: 0.8 }}
+          >
             <ul className="flex">
-              <li className={techItem}>NextJS</li>
-              <li className={techItem}>Tailwind</li>
-              <li className={techItem}>Framer Motion</li>
-              <li className={techItem}>WordPress</li>
+              {techItems.slice(0, 4).map((item) => (
+                <motion.li className={techItem} variants={sectionItemVariant}>
+                  {item}
+                </motion.li>
+              ))}
             </ul>
             <ul className="flex">
-              <li className={techItem}>React</li>
-              <li className={techItem}>TypeScript</li>
-              <li className={techItem}>NodeJS</li>
-              <li className={techItem}>ExpressJS</li>
+              {techItems.slice(4).map((item) => (
+                <motion.li className={techItem} variants={sectionItemVariant}>
+                  {item}
+                </motion.li>
+              ))}
             </ul>
-          </div>
+          </motion.div>
         ) : screenSize[0] >= 640 ? (
-          <div>
+          <motion.div
+            variants={sectionListVariant}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, amount: 0.8 }}
+          >
             <ul className="flex justify-center">
-              <li className={techItem}>NextJS</li>
-              <li className={techItem}>Tailwind</li>
-              <li className={techItem}>Framer Motion</li>
+              {techItems.slice(0, 3).map((item) => (
+                <motion.li className={techItem} variants={sectionItemVariant}>
+                  {item}
+                </motion.li>
+              ))}
             </ul>
             <ul className="flex justify-center">
-              <li className={techItem}>WordPress</li>
-              <li className={techItem}>React</li>
-              <li className={techItem}>TypeScript</li>
+              {techItems.slice(3, 6).map((item) => (
+                <motion.li className={techItem} variants={sectionItemVariant}>
+                  {item}
+                </motion.li>
+              ))}
             </ul>
             <ul className="flex justify-center">
-              {" "}
-              <li className={techItem}>NodeJS</li>
-              <li className={techItem}>ExpressJS</li>
+              {techItems.slice(6).map((item) => (
+                <motion.li className={techItem} variants={sectionItemVariant}>
+                  {item}
+                </motion.li>
+              ))}
             </ul>
-          </div>
+          </motion.div>
         ) : (
-          <div className="flex flex-col">
+          <motion.div
+            className="flex flex-col"
+            variants={sectionListVariant}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, amount: 0.8 }}
+          >
             <ul className="flex justify-between">
-              <li className={techItem}>NextJS</li>
-              <li className={techItem}>Tailwind</li>
+              {techItems.slice(0, 2).map((item) => (
+                <motion.li className={techItem} variants={sectionItemVariant}>
+                  {item}
+                </motion.li>
+              ))}
             </ul>
             <ul className="flex justify-between">
-              <li className={techItem}>Framer Motion</li>
-              <li className={techItem}>WordPress</li>
+              {techItems.slice(2, 4).map((item) => (
+                <motion.li className={techItem} variants={sectionItemVariant}>
+                  {item}
+                </motion.li>
+              ))}
             </ul>
             <ul className="flex justify-between">
-              <li className={techItem}>React</li>
-              <li className={techItem}>TypeScript</li>
+              {techItems.slice(4, 6).map((item) => (
+                <motion.li className={techItem} variants={sectionItemVariant}>
+                  {item}
+                </motion.li>
+              ))}
             </ul>
             <ul className="flex justify-between">
-              {" "}
-              <li className={techItem}>NodeJS</li>
-              <li className={techItem}>ExpressJS</li>
+              {techItems.slice(6).map((item) => (
+                <motion.li className={techItem} variants={sectionItemVariant}>
+                  {item}
+                </motion.li>
+              ))}
             </ul>
-          </div>
+          </motion.div>
         )}
       </div>
     </div>
