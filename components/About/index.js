@@ -39,8 +39,6 @@ const sectionListVariant = {
   whileInView: { opacity: 1, y: 0, transition: { duration: 0.75 } },
 };
 
-const sectionItemVariant = {};
-
 const techItem =
   "before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-1/4 before:aspect-square before:bg-primary relative items-center tracking-tighter md:text-[20px] lg:text-[26px] 3xl:text-p_xl  text-black_75 pl-6 w-1/2 sm:w-1/4";
 
@@ -88,16 +86,12 @@ const About = React.forwardRef(({ screenSize }, ref) => {
           >
             <ul className="flex">
               {techItems.slice(0, 4).map((item) => (
-                <motion.li className={techItem} variants={sectionItemVariant}>
-                  {item}
-                </motion.li>
+                <li className={techItem}>{item}</li>
               ))}
             </ul>
             <ul className="flex">
               {techItems.slice(4).map((item) => (
-                <motion.li className={techItem} variants={sectionItemVariant}>
-                  {item}
-                </motion.li>
+                <li className={techItem}>{item}</li>
               ))}
             </ul>
           </motion.div>
@@ -110,23 +104,17 @@ const About = React.forwardRef(({ screenSize }, ref) => {
           >
             <ul className="flex justify-center">
               {techItems.slice(0, 3).map((item) => (
-                <motion.li className={techItem} variants={sectionItemVariant}>
-                  {item}
-                </motion.li>
+                <li className={techItem}>{item}</li>
               ))}
             </ul>
             <ul className="flex justify-center">
               {techItems.slice(3, 6).map((item) => (
-                <motion.li className={techItem} variants={sectionItemVariant}>
-                  {item}
-                </motion.li>
+                <li className={techItem}>{item}</li>
               ))}
             </ul>
             <ul className="flex justify-center">
               {techItems.slice(6).map((item) => (
-                <motion.li className={techItem} variants={sectionItemVariant}>
-                  {item}
-                </motion.li>
+                <li className={techItem}>{item}</li>
               ))}
             </ul>
           </motion.div>
@@ -140,30 +128,22 @@ const About = React.forwardRef(({ screenSize }, ref) => {
           >
             <ul className="flex justify-between">
               {techItems.slice(0, 2).map((item) => (
-                <motion.li className={techItem} variants={sectionItemVariant}>
-                  {item}
-                </motion.li>
+                <li className={techItem}>{item}</li>
               ))}
             </ul>
             <ul className="flex justify-between">
               {techItems.slice(2, 4).map((item) => (
-                <motion.li className={techItem} variants={sectionItemVariant}>
-                  {item}
-                </motion.li>
+                <li className={techItem}>{item}</li>
               ))}
             </ul>
             <ul className="flex justify-between">
               {techItems.slice(4, 6).map((item) => (
-                <motion.li className={techItem} variants={sectionItemVariant}>
-                  {item}
-                </motion.li>
+                <li className={techItem}>{item}</li>
               ))}
             </ul>
             <ul className="flex justify-between">
               {techItems.slice(6).map((item) => (
-                <motion.li className={techItem} variants={sectionItemVariant}>
-                  {item}
-                </motion.li>
+                <li className={techItem}>{item}</li>
               ))}
             </ul>
           </motion.div>
