@@ -2,9 +2,15 @@ import React from "react";
 import Image from "next/image";
 import Logo from "../../assets/svgs/Logo_White.svg";
 
+// Contexts
+import { useScreenSizeContext } from "../../pages/_app";
+
+// Components
 import ProjectNavBar from "../ProjectNavBar";
 
-function ProjectHeader({ screenSize, setIsContactOpen, setIsNavMenuOpen }) {
+function ProjectHeader({ setIsContactOpen, setIsNavMenuOpen }) {
+  const { screenSize } = useScreenSizeContext();
+
   return (
     <div
       className={`w-full flex justify-center items-center px-8 md:px-16 py-6 pb-4 z-10`}
@@ -16,7 +22,7 @@ function ProjectHeader({ screenSize, setIsContactOpen, setIsNavMenuOpen }) {
             layout="fill"
             objectFit="contain"
             style={{ fill: "#FFFFFF" }}
-          ></Image>
+          />
         </div>
 
         {screenSize[0] >= 1024 ? (

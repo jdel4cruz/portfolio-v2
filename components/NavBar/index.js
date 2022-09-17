@@ -16,7 +16,7 @@ const itemVariant = {
 };
 
 function NavBar({ setIsContactOpen }) {
-  const { isInView, setIsInView } = useViewContext();
+  const { isInView } = useViewContext();
 
   return (
     <motion.ul

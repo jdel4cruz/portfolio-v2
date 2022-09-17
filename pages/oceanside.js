@@ -30,6 +30,10 @@ const thoughtsText = [
   "Overall though, I'm happy with the project. If you got to the end of this, I hope that explaining my experience on this project was in some way useful to you. Thanks for reading and have a good day!",
 ];
 
+const githubURL = "https://github.com/jdel4cruz/OceanSide";
+
+const siteURL = "https://clever-sopapillas-25f3d4.netlify.app/";
+
 const data = {
   goalsText,
   processText,
@@ -38,6 +42,8 @@ const data = {
   projectTitle,
   projectDescription,
   projectOneLiner,
+  githubURL,
+  siteURL,
 };
 
 export default function OceanSide() {

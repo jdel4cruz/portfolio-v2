@@ -4,6 +4,14 @@ import { useRouter } from "next/router";
 
 import PageTransition from "../layouts/PageTransition";
 
+// Hooks
+import useScreenSize from "../Hooks/useScreenSize";
+
+const screenSizeContext = createContext();
+export const useScreenSizeContext = () => {
+  return useContext(screenSizeContext);
+};
+
 const RouteContext = createContext();
 export const useRouteContext = () => {
   return useContext(RouteContext);
@@ -12,6 +20,7 @@ export const useRouteContext = () => {
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const [isRouteChanging, setIsRouteChanging] = useState(false);
+  const screenSize = useScreenSize();
   const historyRef = useRef();
 
   useEffect(() => {
@@ -46,9 +55,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <PageTransition isRouteChanging={isRouteChanging} />
-      <RouteContext.Provider value={{ isRouteChanging, setIsRouteChanging }}>
-        <Component {...pageProps} />;{" "}
-      </RouteContext.Provider>
+      <screenSizeContext.Provider value={{ screenSize }}>
+        <RouteContext.Provider value={{ isRouteChanging, setIsRouteChanging }}>
+          <Component {...pageProps} />
+        </RouteContext.Provider>
+      </screenSizeContext.Provider>
     </>
   );
 }

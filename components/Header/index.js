@@ -5,6 +5,9 @@ import Logo from "../../assets/svgs/Logo2.svg";
 
 import NavBar from "../NavBar";
 
+// Contexts
+import { useScreenSizeContext } from "../../pages/_app";
+
 const headerVariant = {
   initial: {},
   animate: { transition: { staggerChildren: 0.1 } },
@@ -19,7 +22,8 @@ const hamburgerVariant = {
   animate: { opacity: 1, x: 0, transition: { duration: 0.5 } },
 };
 
-function Header({ screenSize, setIsContactOpen, setIsNavMenuOpen }) {
+function Header({ setIsContactOpen, setIsNavMenuOpen }) {
+  const { screenSize } = useScreenSizeContext();
   return (
     <motion.div
       className={`fixed top-0 w-screen max-w-full 

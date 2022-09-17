@@ -1,19 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// Contexts
+import { useScreenSizeContext } from "../../pages/_app";
+
 const sectionVariant = {
   initial: {},
   whileInView: { transition: { staggerChildren: 0.1 } },
 };
 
-const sectionTitleVariant = {
-  initial: { opacity: 0, y: "-25%" },
-  whileInView: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "tween", duration: 0.75 },
-  },
-};
 const sectionTextVariant = {
   initial: { opacity: 0, y: "25%" },
   whileInView: {
@@ -42,10 +37,11 @@ const sectionListVariant = {
 const techItem =
   "before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-1/4 before:aspect-square before:bg-primary relative items-center tracking-tighter md:text-[20px] lg:text-[26px] 3xl:text-p_xl  text-black_75 pl-6 w-1/2 sm:w-1/4";
 
-const About = React.forwardRef(({ screenSize }, ref) => {
+const About = React.forwardRef((props, ref) => {
+  const { screenSize } = useScreenSizeContext();
   return (
     <motion.div
-      className="w-screen max-w-full min-h-[75vh] lg:min-h-screen flex flex-col items-center lg:justify-center relative gap-12 md: mb-16 scroll-mt-[120px] lg:scroll-mt-0"
+      className="w-screen max-w-full min-h-[85vh] lg:min-h-screen flex flex-col items-center lg:justify-center relative gap-12 md:mb-16 scroll-mt-[120px] lg:scroll-mt-0"
       id="about"
       ref={ref}
       variants={sectionVariant}
@@ -54,7 +50,7 @@ const About = React.forwardRef(({ screenSize }, ref) => {
       viewport={{ once: true, amount: 0.5 }}
     >
       <motion.h2
-        className="text-h1_sm md:text-h1_md lg:text-h1 xl:text-h1_xl text-primary_tone leading-tight -z-10 md:mb-8"
+        className="text-h1_sm sm:text-h1_md lg:text-h1 xl:text-h1_xl text-primary_tone leading-tight -z-10 xl:mb-8"
         variants={sectionTextVariant}
       >
         ABOUT
@@ -85,13 +81,17 @@ const About = React.forwardRef(({ screenSize }, ref) => {
             viewport={{ once: true, amount: 0.8 }}
           >
             <ul className="flex">
-              {techItems.slice(0, 4).map((item) => (
-                <li className={techItem}>{item}</li>
+              {techItems.slice(0, 4).map((item, i) => (
+                <li className={techItem} key={i}>
+                  {item}
+                </li>
               ))}
             </ul>
             <ul className="flex">
-              {techItems.slice(4).map((item) => (
-                <li className={techItem}>{item}</li>
+              {techItems.slice(4).map((item, i) => (
+                <li className={techItem} key={i}>
+                  {item}
+                </li>
               ))}
             </ul>
           </motion.div>
@@ -103,18 +103,24 @@ const About = React.forwardRef(({ screenSize }, ref) => {
             viewport={{ once: true, amount: 0.8 }}
           >
             <ul className="flex justify-center">
-              {techItems.slice(0, 3).map((item) => (
-                <li className={techItem}>{item}</li>
+              {techItems.slice(0, 3).map((item, i) => (
+                <li className={techItem} key={i}>
+                  {item}
+                </li>
               ))}
             </ul>
             <ul className="flex justify-center">
-              {techItems.slice(3, 6).map((item) => (
-                <li className={techItem}>{item}</li>
+              {techItems.slice(3, 6).map((item, i) => (
+                <li className={techItem} key={i}>
+                  {item}
+                </li>
               ))}
             </ul>
             <ul className="flex justify-center">
-              {techItems.slice(6).map((item) => (
-                <li className={techItem}>{item}</li>
+              {techItems.slice(6).map((item, i) => (
+                <li className={techItem} key={i}>
+                  {item}
+                </li>
               ))}
             </ul>
           </motion.div>
@@ -127,23 +133,31 @@ const About = React.forwardRef(({ screenSize }, ref) => {
             viewport={{ once: true, amount: 0.8 }}
           >
             <ul className="flex justify-between">
-              {techItems.slice(0, 2).map((item) => (
-                <li className={techItem}>{item}</li>
+              {techItems.slice(0, 2).map((item, i) => (
+                <li className={techItem} key={i}>
+                  {item}
+                </li>
               ))}
             </ul>
             <ul className="flex justify-between">
-              {techItems.slice(2, 4).map((item) => (
-                <li className={techItem}>{item}</li>
+              {techItems.slice(2, 4).map((item, i) => (
+                <li className={techItem} key={i}>
+                  {item}
+                </li>
               ))}
             </ul>
             <ul className="flex justify-between">
-              {techItems.slice(4, 6).map((item) => (
-                <li className={techItem}>{item}</li>
+              {techItems.slice(4, 6).map((item, i) => (
+                <li className={techItem} key={i}>
+                  {item}
+                </li>
               ))}
             </ul>
             <ul className="flex justify-between">
-              {techItems.slice(6).map((item) => (
-                <li className={techItem}>{item}</li>
+              {techItems.slice(6).map((item, i) => (
+                <li className={techItem} key={i}>
+                  {item}
+                </li>
               ))}
             </ul>
           </motion.div>

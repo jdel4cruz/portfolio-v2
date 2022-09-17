@@ -9,7 +9,7 @@ const Contact = React.forwardRef(({ setIsContactOpen }, ref) => {
       id="contact"
       ref={ref}
     >
-      <h2 className="text-h1_sm md:text-h1_md lg:text-h1 xl:text-h1_xl text-primary_tone leading-tight -z-10 pb-4">
+      <h2 className="text-h1_sm sm:text-h1_md lg:text-h1 xl:text-h1_xl text-primary_tone leading-tight -z-10 pb-4">
         CONTACT
       </h2>
       <div className="flex flex-col  w-3/4 lg:w-1/2 items-center justify-center text-center gap-8 sm:gap-16">

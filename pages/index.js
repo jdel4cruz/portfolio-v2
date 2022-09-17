@@ -11,17 +11,16 @@ import Contact from "../components/Contact";
 import ContactModal from "../components/ContactModal";
 import NavMenu from "../components/NavMenu";
 
-// Hooks
-import useScreenSize from "../Hooks/useScreenSize";
-
 // Contexts
+import { useScreenSizeContext } from "./_app";
+
 const ViewContext = createContext();
 export const useViewContext = () => {
   return useContext(ViewContext);
 };
 
 export default function Home() {
-  const screenSize = useScreenSize();
+  const { screenSize } = useScreenSizeContext();
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
   const [isInView, setIsInView] = useState("home");
@@ -100,7 +99,7 @@ export default function Home() {
           setIsNavMenuOpen={setIsNavMenuOpen}
         />
         <Main ref={homeRef} />
-        <About screenSize={screenSize} ref={aboutRef} />
+        <About ref={aboutRef} />
         <Projects ref={projectsRef} />
         <Contact ref={contactRef} setIsContactOpen={setIsContactOpen} />
       </ViewContext.Provider>

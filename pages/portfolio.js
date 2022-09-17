@@ -44,6 +44,8 @@ const thoughtsText = [
   "With this portfolio, I didn’t take any concessions. If I was working on something, and realized a way I could improve it, I made it happen. So as of right now this portfolio is built to the best of my ability. Of course hindsight is 20/20 and I'll probably look back and find it lacking in the future, but for now I'm content with what I've made.",
 ];
 
+const githubURL = "https://github.com/jdel4cruz/portfolio-v2";
+
 const data = {
   goalsText,
   styleText,
@@ -54,6 +56,7 @@ const data = {
   projectTitle,
   projectDescription,
   projectOneLiner,
+  githubURL,
 };
 
 export default function Portfolio() {

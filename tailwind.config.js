@@ -25,7 +25,7 @@ module.exports = {
         h3_md: "27px",
         p_md: "23px",
         background_md: "82px",
-        h1_sm: "27px",
+        h1_sm: "36px",
         h2_sm: "19px",
         h3_sm: "16px",
         p_sm: "16px",
