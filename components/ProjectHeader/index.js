@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Logo from "../../assets/svgs/Logo_White.svg";
 
 // Contexts
@@ -7,6 +8,12 @@ import { useScreenSizeContext } from "../../pages/_app";
 
 // Components
 import ProjectNavBar from "../ProjectNavBar";
+
+// Variants
+const hamburgerVariant = {
+  initial: { opacity: 0, x: "200%" },
+  animate: { opacity: 1, x: 0, transition: { duration: 0.3, delay: 0.2 } },
+};
 
 function ProjectHeader({ setIsContactOpen, setIsNavMenuOpen }) {
   const { screenSize } = useScreenSizeContext();
@@ -28,7 +35,12 @@ function ProjectHeader({ setIsContactOpen, setIsNavMenuOpen }) {
         {screenSize[0] >= 1024 ? (
           <ProjectNavBar setIsContactOpen={setIsContactOpen} />
         ) : (
-          <button onClick={() => setIsNavMenuOpen(true)}>
+          <motion.button
+            onClick={() => setIsNavMenuOpen(true)}
+            variants={hamburgerVariant}
+            initial="initial"
+            animate="animate"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width={screenSize[0] >= 640 ? "64" : "48"}
@@ -42,7 +54,7 @@ function ProjectHeader({ setIsContactOpen, setIsNavMenuOpen }) {
                 d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
               />
             </svg>
-          </button>
+          </motion.button>
         )}
       </div>
     </div>

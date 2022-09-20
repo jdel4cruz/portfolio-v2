@@ -17,7 +17,7 @@ const styleColors = [
   ],
 ];
 
-const projectTitle = "Portfolio Website";
+const projectTitle = "Portfolio";
 const projectDescription = "An overview of my portfolio website";
 const projectOneLiner = "Focused On Design";
 const imgPath = "bg-[url('/images/JDCruz_Portfolio_Site3.png')]";

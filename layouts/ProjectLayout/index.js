@@ -45,9 +45,62 @@ const sectionPVariant = {
   },
 };
 
+const onScreenSectionVariant = {
+  initial: {},
+  animate: {
+    transition: { staggerChildren: 0.25, delayChildren: 0.6 },
+  },
+};
+
+const onScreenSectionTitleVariant = {
+  initial: { y: "-100%", opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "tween", duration: 0.35, ease: "easeOut" },
+  },
+};
+
+const onScreenSectionTextVariant = {
+  initial: {},
+  animate: { transition: { staggerChildren: 0.25 } },
+};
+
+const onScreenSectionPVariant = {
+  initial: { y: "100%", opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "tween", duration: 0.35, ease: "easeOut" },
+  },
+};
+
+const heroVariant = {
+  initial: {},
+  animate: {},
+};
+
+const heroTitleVariant = {
+  initial: { opacity: 0, x: "-100%" },
+  animate: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+};
+const heroDescriptionVariant = {
+  initial: { opacity: 0, x: "-100%" },
+  animate: { opacity: 1, x: 0, transition: { duration: 0.6, delay: 0.1 } },
+};
+
 const iconVariant = {
-  initial: { y: "100%" },
-  animate: { y: 0 },
+  initial: { opacity: 0, y: "50%" },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+};
+
+const iconHoverVariant = {
+  initial: { color: "#FFFFFF" },
+  whileHover: { color: "#FEAE35", transition: { duration: 0.3 } },
+};
+const iconListVariant = {
+  initial: {},
+  animate: { transition: { staggerChildren: 0.25, delayChildren: 0.6 } },
 };
 
 function ProjectLayout({ data }) {
@@ -112,20 +165,33 @@ function ProjectLayout({ data }) {
           setIsContactOpen={setIsContactOpen}
           setIsNavMenuOpen={setIsNavMenuOpen}
         />
-        <div className="w-2/3 flex flex-col justify-end start z-10">
-          <div className="flex gap-32">
-            <h1 className="text-h1_sm md:text-h1_md lg:text-h1 text-white">
+        <motion.div
+          className="w-5/6 lg:w-2/3 flex flex-col justify-end items-start start z-10"
+          variants={heroVariant}
+          initial="initial"
+          animate="animate"
+        >
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-32 w-full">
+            <motion.h1
+              className="text-[48px] md:text-h1_md lg:text-h1 text-white"
+              variants={heroTitleVariant}
+            >
               {projectTitle}
-            </h1>
-            <ul className="flex gap-8 items-center">
-              <li>
+            </motion.h1>
+            <motion.ul
+              className="relative flex gap-4 sm:gap-8 items-center order-first sm:order-last"
+              variants={iconListVariant}
+              initial="initial"
+              animate="animate"
+            >
+              <motion.li variants={iconVariant}>
                 {githubURL && (
                   <a href={githubURL}>
                     <motion.div
-                      className="w-16 h-16 text-white"
-                      variants={iconVariant}
+                      className="w-10 h-10 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-white"
+                      variants={iconHoverVariant}
                       initial="initial"
-                      animate="animate"
+                      whileHover="whileHover"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -137,66 +203,72 @@ function ProjectLayout({ data }) {
                     </motion.div>
                   </a>
                 )}
-              </li>
-              <li>
+              </motion.li>
+
+              <motion.li variants={iconVariant}>
                 {siteURL && (
                   <a href={siteURL}>
                     <motion.div
-                      className="w-16 h-16 text-white"
-                      variants={iconVariant}
+                      className="w-10 h-10 sm:w-14 sm:h-14 lg:w-16 lg:h-16"
+                      variants={iconHoverVariant}
                       initial="initial"
-                      animate="animate"
+                      whileHover="whileHover"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor"
-                        class="bi bi-box-arrow-up-left"
                         viewBox="0 0 16 16"
                       >
                         <path
-                          fill-rule="evenodd"
+                          fillRule="evenodd"
                           d="M7.364 3.5a.5.5 0 0 1 .5-.5H14.5A1.5 1.5 0 0 1 16 4.5v10a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 3 14.5V7.864a.5.5 0 1 1 1 0V14.5a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5v-10a.5.5 0 0 0-.5-.5H7.864a.5.5 0 0 1-.5-.5z"
                         />
                         <path
-                          fill-rule="evenodd"
+                          fillRule="evenodd"
                           d="M0 .5A.5.5 0 0 1 .5 0h5a.5.5 0 0 1 0 1H1.707l8.147 8.146a.5.5 0 0 1-.708.708L1 1.707V5.5a.5.5 0 0 1-1 0v-5z"
                         />
                       </svg>
                     </motion.div>
                   </a>
                 )}
-              </li>
-            </ul>
+              </motion.li>
+            </motion.ul>
           </div>
-
-          <h2 className="text-h2_sm md:text-h2_md lg:text-h2 text-white">
+          <motion.h2
+            className="text-[23px] md:text-h2_md lg:text-h2 text-white"
+            variants={heroDescriptionVariant}
+          >
             {projectOneLiner}
-          </h2>
-        </div>
+          </motion.h2>
+        </motion.div>
       </div>
-      <div className="w-full min-h-screen flex flex-col gap-8 md:gap-24 items-center justify-center mt-20">
+
+      <div className="w-full min-h-screen flex flex-col gap-8 md:gap-24 items-center justify-center mt-8 md:mt-16">
         <motion.div
           className="w-5/6 lg:w-2/3 max-w-[1150px] gap-4 md:gap-8 flex flex-col justify-center items-center"
-          variants={sectionVariant}
+          variants={onScreenSectionVariant}
           initial="initial"
-          whileInView="whileInView"
+          animate="animate"
           viewport={{ once: true }}
         >
           <div className="overflow-hidden">
             <motion.h2
               className="text-primary text-background_sm md:text-[64px] lg:text-background_md"
-              variants={sectionTitleVariant}
+              variants={onScreenSectionTitleVariant}
             >
               Goals
             </motion.h2>
           </div>
           <motion.div
-            variants={sectionTextVariant}
+            variants={onScreenSectionTextVariant}
             className="flex flex-col gap-8"
           >
             {goalsText.map((paragraph, i) => (
               <div className="overflow-hidden flex flex-col gap-4" key={i}>
-                <motion.p className={pClassName} variants={sectionPVariant}>
+                <motion.p
+                  className={pClassName}
+                  variants={onScreenSectionPVariant}
+                >
                   {paragraph}
                 </motion.p>
               </div>

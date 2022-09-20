@@ -21,7 +21,7 @@ function Socials() {
       variants={listVariant}
     >
       <motion.li
-        className="h-16 lg:h-20 3xl:h-24 aspect-square text-primary relative"
+        className="h-12 md:h-16 lg:h-20 3xl:h-24 aspect-square text-primary relative"
         variants={iconVariant}
       >
         <a href="https://github.com/jdel4cruz">
@@ -35,7 +35,7 @@ function Socials() {
         </a>
       </motion.li>
       <motion.li
-        className="h-16 lg:h-20 3xl:h-24 aspect-square text-primary relative"
+        className="h-12 md:h-16 lg:h-20 3xl:h-24 aspect-square text-primary relative"
         variants={iconVariant}
       >
         <a href="https://www.linkedin.com/in/john-de-la-cruz-160bb045/">

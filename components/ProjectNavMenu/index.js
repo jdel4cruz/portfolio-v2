@@ -91,8 +91,8 @@ function ProjectNavMenu({ isOpen, setIsOpen, setIsContactOpen }) {
               variants={barVariant}
             />
           </motion.ul>
-          <ul className="flex flex-col items-center gap-8">
-            <li className="w-full relative">
+          <ul className="flex flex-col w-full items-center gap-8">
+            <li>
               <Link href={process.env.NEXT_PUBLIC_ROOT_URL}>
                 <a
                   className=" flex justify-center w-full text-white text-h1"
@@ -105,7 +105,7 @@ function ProjectNavMenu({ isOpen, setIsOpen, setIsContactOpen }) {
                 </a>
               </Link>
             </li>
-            <li className="w-full relative">
+            <li>
               <Link href={`${process.env.NEXT_PUBLIC_ROOT_URL}/#projects`}>
                 <a
                   className=" flex justify-center w-full text-white text-h1"
@@ -121,7 +121,7 @@ function ProjectNavMenu({ isOpen, setIsOpen, setIsContactOpen }) {
                 </a>
               </Link>
             </li>
-            <li className="w-full relative">
+            <li>
               <button
                 className=" flex justify-center w-full text-white text-h1"
                 onClick={() => {
