@@ -293,7 +293,7 @@ function ProjectPreview({
                 <p className="mb-8 text-[20px] md:text-p_md lg:text-p 3xl:text-p_xl">
                   {description}
                 </p>
-                <div className="flex justify-center items-center bg-tertiary rounded-lg px-5 py-4 text-[1rem] md:text-p_md lg:text-p text-white font-bold">
+                <div className="flex justify-center items-center bg-tertiary rounded-lg p-4 3xl:p-6  text-[1rem] md:text-p_md lg:text-p 3xl:text-p_xl text-white font-bold">
                   Learn More
                 </div>
               </div>

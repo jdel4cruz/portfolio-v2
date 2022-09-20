@@ -96,7 +96,7 @@ function ContactModal({ isOpen, setIsOpen }) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed flex items-center justify-center w-screen max-w-full h-screen z-50 overflow">
+        <div className="fixed flex  items-center justify-center w-full h-full z-50">
           <motion.div
             className="absolute top-0 right-0 w-full h-full bg-black -z-10"
             variants={overlayVariant}
@@ -106,13 +106,13 @@ function ContactModal({ isOpen, setIsOpen }) {
             onClick={handleClose}
           />
 
-          <div className="flex flex-col items-center w-full h-full sm:h-fit sm:w-[600px] overflow-scroll sm:overflow-visible">
+          <div className="flex flex-col justify-start lg:justify-center items-center w-full h-full lg:w-[600px] overflow-scroll lg:overflow-visible">
             <motion.div
               variants={textModal}
               initial="initial"
               animate="animate"
               exit="exit"
-              className="flex flex-col gap-4 bg-white p-12 pb-8 sm:rounded-tl-3xl sm:rounded-tr-3xl w-full"
+              className="flex flex-col gap-4 p-8  sm:p-16 lg:p-12 sm:pb-8 bg-white h-fit max-h-[30%] lg:h-fit lg:rounded-tl-3xl lg:rounded-tr-3xl w-full"
             >
               <CloseIcon
                 handleClose={handleClose}
@@ -120,7 +120,7 @@ function ContactModal({ isOpen, setIsOpen }) {
                 size="w-10 h-10 sm:w-12 sm:h-12"
                 delay={0.4}
               />
-              <motion.h2 className="text-h2_md text-primary sm:mb-4">
+              <motion.h2 className="text-h2_md text-primary sm:mb-4 leading-none">
                 Hey There!
               </motion.h2>
               <motion.p className="sm:text-xl text-black_75">
@@ -136,7 +136,7 @@ function ContactModal({ isOpen, setIsOpen }) {
               initial="initial"
               animate="animate"
               exit="exit"
-              className="flex flex-col gap-4 text-white bg-primary p-12 pt-8 sm:rounded-bl-3xl sm:rounded-br-3xl w-full"
+              className="flex flex-col gap-4 w-full text-white h-fit p-8 sm:p-16 lg:p-12 sm:pt-8 bg-primary lg:rounded-bl-3xl lg:rounded-br-3xl "
             >
               <div className="flex flex-col">
                 <div className="flex justify-between items-center">
@@ -233,14 +233,14 @@ function ContactModal({ isOpen, setIsOpen }) {
               </div>
               <div className="flex items-center gap-8">
                 <button
-                  className="bg-secondary rounded-lg px-12 py-4 flex justify-center items-center"
+                  className="bg-tertiary rounded-lg px-8 md:px-16 py-4 flex justify-center items-center"
                   type="submit"
                   value="Submit!"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
-                    className="w-10 h-10 md:w-12 md:h-12"
+                    className="w-8 h-8"
                     viewBox="0 0 16 16"
                   >
                     <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />

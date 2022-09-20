@@ -27,7 +27,6 @@ const Contact = React.forwardRef(({ setIsContactOpen }, ref) => {
         >
           Say Hi!
         </ContactButton>
-        <Socials />
       </div>
     </div>
   );
