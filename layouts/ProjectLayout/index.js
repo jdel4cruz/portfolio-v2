@@ -33,7 +33,7 @@ const sectionTitleVariant = {
 
 const sectionTextVariant = {
   initial: {},
-  whileInView: { transition: { staggerChildren: 0 } },
+  whileInView: { transition: { staggerChildren: 0.25 } },
 };
 
 const sectionPVariant = {

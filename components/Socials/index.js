@@ -17,7 +17,7 @@ const iconVariant = {
 function Socials() {
   return (
     <motion.ul
-      className="flex gap-8  h-8 md:h-16 lg:h-20 3xl:h-24"
+      className="flex gap-16 h-8 md:h-16 lg:h-20 3xl:h-24"
       variants={listVariant}
     >
       <motion.li
