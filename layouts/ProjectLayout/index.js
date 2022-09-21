@@ -95,8 +95,8 @@ const iconVariant = {
 };
 
 const iconHoverVariant = {
-  initial: { color: "#FFFFFF" },
-  whileHover: { color: "#FEAE35", transition: { duration: 0.3 } },
+  initial: { scale: 1 },
+  whileHover: { scale: 1.1 },
 };
 const iconListVariant = {
   initial: {},
