@@ -4,7 +4,6 @@ import Link from "next/link";
 
 // Components
 import CloseIcon from "../CloseIcon";
-import Socials from "../Socials";
 
 const menuVariant = {
   initial: { x: "100%" },
@@ -124,7 +123,7 @@ function NavMenu({ isOpen, setIsOpen, setIsContactOpen }) {
               </button>
             </li>
           </ul>
-          <ul className="absolute bottom-8 flex gap-8 md:h-16 lg:h-20 3xl:h-24">
+          <ul className="absolute bottom-12 flex gap-8 md:h-16 lg:h-20 3xl:h-24">
             <li className="h-16 lg:h-20 3xl:h-24 aspect-square text-white relative">
               <a href="https://github.com/jdel4cruz">
                 <svg

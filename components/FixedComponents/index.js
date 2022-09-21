@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { motion, useScroll, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import linkedin from "../../assets/svgs/icons8-linkedin.svg";
 
 // Contexts
 import { useScreenSizeContext } from "../../pages/_app";

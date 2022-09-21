@@ -9,6 +9,7 @@ html {
 @layer base {
   body {
     @apply bg-[#ffffff] text-black_75;
+    @apply lg:no-scrollbar;
   }
 
   h1,
