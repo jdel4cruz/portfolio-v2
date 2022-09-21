@@ -276,7 +276,7 @@ function ProjectPreview({
                   isLeft
                     ? "[clip-path:polygon(0%_0%,100%_0%,100%_100%)]"
                     : "[clip-path:polygon(0%_0%,100%_0%,0%_100%)]"
-                }  bg-primary_tone opacity-75`}
+                }  bg-[#0E1E4F] opacity-75`}
                 variants={
                   isLeft ? overlayLeftHoverVariant : overlayRightHoverVariant
                 }
