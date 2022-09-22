@@ -23,9 +23,9 @@ const projectOneLiner = "Focused On Design";
 const imgPath = "bg-[url('/images/JDCruz_Portfolio_Site3.png')]";
 
 const goalsText = [
-  "Going into this project, I was happy with all the different tools I've learned to build web applications, but my designs were always lacking. And when looking at my portfolio site, it wasn’t doing its job of showing off my stuff, so it was high time to redo it all together.",
+  "Going into this project, I was happy with all the different tools I've learned to build web applications, but my designs were always lacking. And when looking at my portfolio site, it wasn’t doing its job of showing off my skills. So it was high time to redo it from the ground up.",
   "The first thing I considered was my front-end and back-end frameworks I would use for my portfolio, and I settled on NextJS as my framework for 3 reasons. I'm very comfortable with React, it has a bunch of built in functionality with things like API routes and environment variables, and it can serve as both my front-end and back-end framework at the same time.",
-  "Afterwards, I needed to pick some form of styling for my website and I immediately settled on Tailwind CSS. Primarily because it’s been on my plate for a hot minute, but also because it’s a popular CSS framework that once learned, allows you to get sites up and running lightning fast at the cost of some ridiculously long class names.",
+  "Afterwards, I needed to pick some form of styling for my website and I immediately settled on Tailwind CSS. Primarily because I've been wanting to learn it for a hot minute, but also because it’s a popular CSS framework that once learned, allows you to get sites up and running lightning fast at the cost of some ridiculously long class names.",
   "Lastly, I wanted to create animations to push my portfolio to the next level. While I know how to use CSS to create basic animations, I’ve always wanted to learn a React animation library and figured this would be a good opportunity. After looking at the top two options, Framer Motion and React Spring, I settled on Framer Motion as it’s much more popular between the two and it seemed simple enough to use.",
 ];
 
@@ -40,7 +40,7 @@ const styleText = [
 ];
 
 const thoughtsText = [
-  "At the point of writing this (03-Sep-2022), I don't have anything I would go back and change at this time. With my previous projects, I had a scope of things I wanted to achieve with them, and avoided scope creep. With anything you work on, they can always be improved and sometimes you just need to settle and say we’ll do better next time.",
+  "At the point of writing this (21-Sep-2022), I don't have anything I would go back and change at this time. With my previous projects, I had a scope of things I wanted to achieve with them. If I found new things that I thought I should learn during the project, oftentimes I'd put it off until a later project to avoid scope creep. With anything you work on, it can always be improved and sometimes you just need to settle and say you’ll do better next time.",
   "With this portfolio, I didn’t take any concessions. If I was working on something, and realized a way I could improve it, I made it happen. So as of right now this portfolio is built to the best of my ability. Of course hindsight is 20/20 and I'll probably look back and find it lacking in the future, but for now I'm content with what I've made.",
 ];
 

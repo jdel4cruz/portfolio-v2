@@ -19,14 +19,14 @@ const sectionTextVariant = {
 };
 
 const techItems = [
-  "NextJS",
+  "React",
   "Tailwind",
   "Framer Motion",
-  "WordPress",
   "Material UI",
   "TypeScript",
   "NodeJS",
   "ExpressJS",
+  "WordPress",
 ];
 
 const sectionListVariant = {
@@ -41,7 +41,7 @@ const About = React.forwardRef((props, ref) => {
   const { screenSize } = useScreenSizeContext();
   return (
     <motion.div
-      className="w-screen max-w-full min-h-[85vh] lg:min-h-screen flex flex-col items-center lg:justify-center relative gap-12 md:mb-16 scroll-mt-[120px] lg:scroll-mt-0"
+      className="w-screen max-w-full min-h-[85vh] lg:min-h-screen flex flex-col items-center lg:justify-center relative gap-12 3xl:gap-24 md:mb-16 scroll-mt-[120px] lg:scroll-mt-0"
       id="about"
       ref={ref}
       variants={sectionVariant}
@@ -56,22 +56,24 @@ const About = React.forwardRef((props, ref) => {
         ABOUT
       </motion.h2>
       <motion.div
-        className="w-5/6 xl:w-8/12 3xl:max-w-3xl flex flex-col gap-8"
+        className="w-5/6 xl:w-8/12 3xl:max-w-3xl flex flex-col gap-8 3xl:gap-20"
         variants={sectionTextVariant}
       >
         <p>
           My name is <strong>John</strong> and I am a{" "}
           <strong>former engineer</strong> who is now a{" "}
-          <strong>self-taught web developer</strong>. Back in May of 2020, I
-          decided to step away from engineering in order to find a career path
-          that was more for me. After exploring a variety of interests, I landed
-          on web development and I’ve been hooked ever since.
+          <strong>self-taught web developer</strong>. Back in May of 2020, I got
+          bored with engineering and decided to step away from it in order to
+          find a career path that was more for me. After exploring a variety of
+          interests, I landed on web development and I’ve been hooked ever
+          since.
         </p>
         <p>
-          As of late, I’ve begun focusing more on studying{" "}
-          <strong>UI/UX design</strong> in order to make better use of the
-          various technologies I’ve learned over the past year. Listed below are
-          some of the technologies that I’ve used most recently.
+          Over the past year I've developed a solid base as a developer, but the
+          design side of my projects were always lacking. To address it, I’ve
+          begun focusing more on studying <strong>UI/UX design</strong> in order
+          to make the most of my skillsets. Listed below are some of the
+          technologies that I’ve used most recently.
         </p>
         {screenSize[0] >= 768 ? (
           <motion.div
