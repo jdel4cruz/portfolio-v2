@@ -3,7 +3,7 @@ import ProjectLayout from "../layouts/ProjectLayout";
 const projectTitle = "OceanSide";
 const projectDescription = "An overview of my faux cafe website";
 const projectOneLiner = "A Cafe by the Sea";
-const imgPath = "bg-[url('/images/oceanside.jpg')]";
+const imgPath = "bg-[url('/images/OceanSide.jpg')]";
 
 const goalsText = [
   "Going into this project I wanted to expand the kinds of websites I could build, and potentially have it align with my personal interests. With that in mind, I setted on creating a website for a faux cafe I made up. Primarily because it’d let me fiddle around with e-commerce, but also because I’ve always thought it’d be nice to run a cafe on the beach in my later years.",

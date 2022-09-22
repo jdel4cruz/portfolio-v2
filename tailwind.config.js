@@ -60,6 +60,7 @@ module.exports = {
     colors: {
       primary: "#395BD9",
       primary_tone: "#16308C",
+      primary_tone_2: "#0E1E4F",
       primary_tint: "#5C7FFF",
       primary_tint_10: "#EFF3FF",
       secondary: "#FFCB42",

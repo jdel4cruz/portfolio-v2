@@ -209,7 +209,7 @@ function ProjectLayout({ data }) {
                 {siteURL && (
                   <a href={siteURL}>
                     <motion.div
-                      className="w-10 h-10 sm:w-14 sm:h-14 lg:w-16 lg:h-16"
+                      className="w-10 h-10 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-white"
                       variants={iconHoverVariant}
                       initial="initial"
                       whileHover="whileHover"

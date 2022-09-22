@@ -59,35 +59,35 @@ function ProjectNavMenu({ isOpen, setIsOpen, setIsContactOpen }) {
             variants={listVariant}
           >
             <motion.li
-              className="h-1/8 w-full  bg-primary"
+              className="h-1/8 w-full  bg-primary_tone"
               variants={barVariant}
             />
             <motion.li
-              className="h-1/8 w-full bg-primary"
+              className="h-1/8 w-full bg-primary_tone"
               variants={barVariant}
             />
             <motion.li
-              className="h-1/8 w-full bg-primary "
+              className="h-1/8 w-full bg-primary_tone "
               variants={barVariant}
             />
             <motion.li
-              className="h-1/8 w-full bg-primary"
+              className="h-1/8 w-full bg-primary_tone"
               variants={barVariant}
             />
             <motion.li
-              className="h-1/8 w-full bg-primary"
+              className="h-1/8 w-full bg-primary_tone"
               variants={barVariant}
             />
             <motion.li
-              className="h-1/8 w-full bg-primary"
+              className="h-1/8 w-full bg-primary_tone"
               variants={barVariant}
             />
             <motion.li
-              className="h-1/8 w-full bg-primary "
+              className="h-1/8 w-full bg-primary_tone "
               variants={barVariant}
             />
             <motion.li
-              className="h-1/8 w-full bg-primary"
+              className="h-1/8 w-full bg-primary_tone"
               variants={barVariant}
             />
           </motion.ul>
