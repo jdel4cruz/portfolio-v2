@@ -16,7 +16,7 @@ const menuVariant = {
     transition: {
       when: "beforeChildren",
       type: "tween",
-      delayChildren: 0.5,
+      delayChildren: 0.1,
     },
   },
   exit: {
