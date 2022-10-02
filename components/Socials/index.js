@@ -1,8 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import github from "../../assets/svgs/icons8-github.svg";
-import linkedin from "../../assets/svgs/icons8-linkedin.svg";
 
 const listVariant = {
   initial: {},

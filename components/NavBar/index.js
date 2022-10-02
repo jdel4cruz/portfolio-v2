@@ -5,6 +5,9 @@ import { motion, AnimateSharedLayout } from "framer-motion";
 // Contexts
 import { useViewContext } from "../../pages/index";
 
+// Hooks
+import usePageTransition from "../../Hooks/usePageTransition";
+
 const listVariant = {
   initial: {},
   animate: { transition: { staggerChildren: 0.1, delayChildren: 0.25 } },
@@ -17,6 +20,7 @@ const itemVariant = {
 
 function NavBar({ setIsContactOpen }) {
   const { isInView } = useViewContext();
+  const { routeChange } = usePageTransition();
 
   return (
     <motion.ul
@@ -77,6 +81,16 @@ function NavBar({ setIsContactOpen }) {
             layoutId="underline"
           />
         )}
+      </motion.li>
+      <motion.li className="w-fit pb-1 relative" variants={itemVariant}>
+        <Link href="/resume">
+          <a
+            className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary"
+            onClick={(e) => routeChange(e, "/resume")}
+          >
+            Resume
+          </a>
+        </Link>
       </motion.li>
     </motion.ul>
   );
