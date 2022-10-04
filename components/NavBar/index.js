@@ -24,7 +24,7 @@ function NavBar({ setIsContactOpen }) {
 
   return (
     <motion.ul
-      className="flex gap-8 items-center lg:gap-16"
+      className="flex gap-8 items-center lg:gap-12"
       variants={listVariant}
       initial="initial"
       animate="animate"

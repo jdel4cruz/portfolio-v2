@@ -81,7 +81,7 @@ function NavMenu({ isOpen, setIsOpen, setIsContactOpen }) {
               variants={barVariant}
             />
           </motion.ul>
-          <ul className="flex flex-col items-center gap-8">
+          <ul className="flex flex-col items-center gap-4">
             <li className="w-full relative">
               <Link href="#home">
                 <a
@@ -121,6 +121,13 @@ function NavMenu({ isOpen, setIsOpen, setIsContactOpen }) {
               >
                 Contact
               </button>
+            </li>
+            <li className="w-fit pb-1 relative">
+              <Link href="/resume">
+                <a className="flex justify-center w-full text-white text-h1_md sm:text-h1">
+                  Resume
+                </a>
+              </Link>
             </li>
           </ul>
           <ul className="absolute bottom-12 flex gap-8 md:h-16 lg:h-20 3xl:h-24">

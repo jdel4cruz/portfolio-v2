@@ -26,7 +26,7 @@ html {
   }
 
   h2 {
-    @apply text-h2_sm sm:text-h2_md lg:text-h2 3xl:text-h2_xl;
+    @apply text-h2_sm sm:text-h2_md 2xl:text-h2 3xl:text-h2_xl;
   }
 
   h3 {
@@ -34,7 +34,7 @@ html {
   }
 
   p {
-    @apply text-p_sm sm:text-p_md lg:text-p 3xl:text-p_xl;
+    @apply text-p_sm sm:text-p_md 2xl:text-p 3xl:text-p_xl;
   }
 
   p strong {

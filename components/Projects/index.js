@@ -17,7 +17,7 @@ const sectionTextVariant = {
 const Projects = forwardRef((props, ref) => {
   return (
     <div
-      className="w-screen max-w-full min-h-screen flex flex-col items-center pb-32 scroll-mt-[120px] lg:scroll-mt-32 xl:scroll-mt-24"
+      className="w-screen max-w-full min-h-screen flex flex-col items-center pb-32 scroll-mt-[120px] lg:scroll-mt-32 xl:scroll-mt-[20rem]"
       id="projects"
       ref={ref}
     >
