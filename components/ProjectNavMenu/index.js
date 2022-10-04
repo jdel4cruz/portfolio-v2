@@ -91,11 +91,11 @@ function ProjectNavMenu({ isOpen, setIsOpen, setIsContactOpen }) {
               variants={barVariant}
             />
           </motion.ul>
-          <ul className="flex flex-col w-full items-center gap-8">
+          <ul className="flex flex-col w-full items-center gap-12 mb-8">
             <li>
               <Link href={process.env.NEXT_PUBLIC_ROOT_URL}>
                 <a
-                  className=" flex justify-center w-full text-white text-h1"
+                  className=" flex justify-center w-full text-white text-h1 sm:text-[80px]"
                   onClick={(e) => {
                     routeChange(e, process.env.NEXT_PUBLIC_ROOT_URL);
                     menuRef.current = setTimeout(() => setIsOpen(false), 1000);
@@ -108,7 +108,7 @@ function ProjectNavMenu({ isOpen, setIsOpen, setIsContactOpen }) {
             <li>
               <Link href={`${process.env.NEXT_PUBLIC_ROOT_URL}/#projects`}>
                 <a
-                  className=" flex justify-center w-full text-white text-h1"
+                  className=" flex justify-center w-full text-white text-h1 sm:text-[80px]"
                   onClick={(e) => {
                     routeChange(
                       e,
@@ -123,7 +123,7 @@ function ProjectNavMenu({ isOpen, setIsOpen, setIsContactOpen }) {
             </li>
             <li>
               <button
-                className=" flex justify-center w-full text-white text-h1"
+                className=" flex justify-center w-full text-white text-h1 sm:text-[80px]"
                 onClick={() => {
                   setIsContactOpen(true), setIsOpen(false);
                 }}

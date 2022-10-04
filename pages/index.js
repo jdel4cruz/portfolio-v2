@@ -47,7 +47,7 @@ export default function Home() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(observerCallback, {
-      threshold: 0.5,
+      threshold: 0.4,
     });
     Object.values(refs).forEach(
       (ref) => ref.current && observer.observe(ref.current)

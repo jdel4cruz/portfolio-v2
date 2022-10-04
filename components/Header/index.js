@@ -28,7 +28,7 @@ function Header({ setIsContactOpen, setIsNavMenuOpen }) {
     <>
       <motion.div
         className={`fixed w-screen lg:w-[calc(100%-16px)]  max-h-[124px]
-       flex justify-between items-center px-8 md:px-16 lg:pr-12 py-6 bg-[rgba(255,255,255,0.1)] backdrop-blur z-40`}
+       flex justify-between items-center px-8 md:px-12 lg:pr-8 py-6 bg-[rgba(255,255,255,0.1)] backdrop-blur z-40`}
         variants={headerVariant}
         initial="initial"
         animate="animate"

@@ -25,11 +25,11 @@ const iconVariant = {
 function Technologies() {
   return (
     <motion.div
-      className="w-5/6 xl:w-8/12 3xl:max-w-3xl flex flex-col items-center justify-center relative gap-12 3xl:gap-16 py-32"
+      className="w-5/6 xl:w-8/12 3xl:max-w-3xl flex flex-col items-center justify-center relative gap-12 3xl:gap-16 my-48"
       variants={sectionVariant}
       initial="initial"
       whileInView="whileInView"
-      viewport={{ once: true, amount: 0.5 }}
+      viewport={{ once: true, amount: 0.7 }}
     >
       <motion.h2
         className="text-h1_sm sm:text-h1_md lg:text-h1 xl:text-h1_xl text-primary_tone leading-tight -z-10 mb-8"
@@ -39,7 +39,7 @@ function Technologies() {
       </motion.h2>
       <div className="w-full flex justify-between items-center mb-4">
         <motion.div
-          className="w-1/5 aspect-square text-tertiary flex items-center justify-center"
+          className="w-1/6 aspect-square text-tertiary flex items-center justify-center"
           variants={iconVariant}
         >
           <svg
@@ -54,7 +54,7 @@ function Technologies() {
           </svg>
         </motion.div>
         <motion.div
-          className="w-1/5 aspect-square text-tertiary flex items-center justify-center"
+          className="w-1/6 aspect-square text-tertiary flex items-center justify-center"
           variants={iconVariant}
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
@@ -66,7 +66,7 @@ function Technologies() {
           </svg>
         </motion.div>
         <motion.div
-          className="w-1/5 aspect-square text-tertiary flex items-center justify-center"
+          className="w-1/6 aspect-square text-tertiary flex items-center justify-center"
           variants={iconVariant}
         >
           <svg
@@ -83,7 +83,7 @@ function Technologies() {
           </svg>
         </motion.div>
         <motion.div
-          className="w-1/5 aspect-square text-tertiary flex items-center justify-center"
+          className="w-1/6 aspect-square text-tertiary flex items-center justify-center"
           variants={iconVariant}
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
@@ -101,7 +101,7 @@ function Technologies() {
       </div>
       <div className="w-full flex justify-between items-center">
         <motion.div
-          className="w-1/5 aspect-square text-tertiary flex items-center justify-center"
+          className="w-1/6 aspect-square text-tertiary flex items-center justify-center"
           variants={iconVariant}
         >
           <svg
@@ -115,7 +115,7 @@ function Technologies() {
           </svg>
         </motion.div>
         <motion.div
-          className="w-1/5 aspect-square text-tertiary flex items-center justify-center"
+          className="w-1/6 aspect-square text-tertiary flex items-center justify-center"
           variants={iconVariant}
         >
           <svg
@@ -139,7 +139,7 @@ function Technologies() {
           </svg>
         </motion.div>
         <motion.div
-          className="w-1/5 aspect-square text-tertiary flex items-center justify-center"
+          className="w-1/6 aspect-square text-tertiary flex items-center justify-center"
           variants={iconVariant}
         >
           <svg
@@ -168,7 +168,7 @@ function Technologies() {
           </svg>
         </motion.div>
         <motion.div
-          className="w-1/5 aspect-square text-tertiary flex items-center justify-center"
+          className="w-1/6 aspect-square text-tertiary flex items-center justify-center"
           variants={iconVariant}
         >
           <svg

@@ -40,7 +40,7 @@ const imageVariant = {
 };
 
 const imageSmallVariant = {
-  initial: { opacity: 0, y: "-25%" },
+  initial: { opacity: 0, y: "25%" },
   whileInView: {
     opacity: 1,
     y: 0,
@@ -72,7 +72,7 @@ const About = React.forwardRef((props, ref) => {
 
   return (
     <motion.div
-      className="w-screen max-w-full min-h-screen flex flex-col items-center justify-center relative gap-12 3xl:gap-16 mb-16 2xl:mb-48 scroll-mt-[120px] lg:scroll-mt-0"
+      className="w-screen max-w-full min-h-screen flex flex-col items-center justify-center relative gap-4 md:gap-12 3xl:gap-16 mb-16 2xl:mb-48 scroll-mt-[120px]"
       id="about"
       ref={ref}
       variants={sectionVariant}
@@ -95,7 +95,7 @@ const About = React.forwardRef((props, ref) => {
           >
             ABOUT
           </motion.h2>
-          <div className="w-5/6 xl:w-8/12 3xl:max-w-3xl flex justify-between items-center gap-16 3xl:gap-20 lg:h-[500px] 2xl:h-[600px] 3xl:h-[800px]">
+          <div className="w-5/6 xl:w-8/12 3xl:max-w-3xl flex justify-between items-center sm:gap-4 md:gap-16 3xl:gap-20 lg:h-[500px] 2xl:h-[600px] 3xl:h-[800px]">
             <div className="flex flex-col flex-1 gap-16 2xl:gap-24 h-full">
               <motion.p variants={sectionTextSmallVariant}>
                 My name is <strong>John</strong> and I am a{" "}

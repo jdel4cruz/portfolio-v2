@@ -24,14 +24,14 @@ function NavBar({ setIsContactOpen }) {
 
   return (
     <motion.ul
-      className="flex gap-8 items-center lg:gap-12"
+      className="flex gap-8 items-center 2xl:gap-12"
       variants={listVariant}
       initial="initial"
       animate="animate"
     >
       <motion.li className="w-fit pb-1 relative" variants={itemVariant}>
         <Link href="#home">
-          <a className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary relative">
+          <a className="md:text-h3_md lg:text-h3 2xl:text-h3_xl 3xl:text-[64px]  text-primary relative">
             Home
           </a>
         </Link>
@@ -44,7 +44,7 @@ function NavBar({ setIsContactOpen }) {
       </motion.li>
       <motion.li className="w-fit pb-1 relative" variants={itemVariant}>
         <Link href="#about">
-          <a className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary">
+          <a className="md:text-h3_md lg:text-h3 2xl:text-h3_xl 3xl:text-[64px]  text-primary">
             About
           </a>
         </Link>
@@ -57,7 +57,7 @@ function NavBar({ setIsContactOpen }) {
       </motion.li>
       <motion.li className="w-fit pb-1 relative" variants={itemVariant}>
         <Link href="#projects">
-          <a className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary">
+          <a className="md:text-h3_md lg:text-h3 2xl:text-h3_xl 3xl:text-[64px]  text-primary">
             Projects
           </a>
         </Link>
@@ -70,7 +70,7 @@ function NavBar({ setIsContactOpen }) {
       </motion.li>
       <motion.li className="w-fit pb-1 relative" variants={itemVariant}>
         <button
-          className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary"
+          className="md:text-h3_md lg:text-h3 2xl:text-h3_xl 3xl:text-[64px]  text-primary"
           onClick={() => setIsContactOpen(true)}
         >
           Contact
@@ -85,7 +85,7 @@ function NavBar({ setIsContactOpen }) {
       <motion.li className="w-fit pb-1 relative" variants={itemVariant}>
         <Link href="/resume">
           <a
-            className="md:text-h3_md lg:text-h3 3xl:text-h3_xl  text-primary"
+            className="md:text-h3_md lg:text-h3 2xl:text-h3_xl 3xl:text-[64px]  text-primary"
             onClick={(e) => routeChange(e, "/resume")}
           >
             Resume
