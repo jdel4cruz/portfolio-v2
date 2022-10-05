@@ -75,6 +75,21 @@ module.exports = {
       white: "#ffffff",
       transparent: "transparent",
     },
+    keyframes: {
+      buttonHover: {
+        "0%": {
+          transform: "scaleX(1.0) scaleY(1.0)",
+          opacity: "90%",
+        },
+        "100%": {
+          transform: "scaleX(1.2) scaleY(1.6)",
+          opacity: 0,
+        },
+      },
+    },
+    animation: {
+      buttonHover: "buttonHover .7s linear .8s",
+    },
   },
   plugins: [
     plugin(function ({ addUtilities }) {

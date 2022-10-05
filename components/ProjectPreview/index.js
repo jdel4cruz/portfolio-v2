@@ -108,7 +108,7 @@ const imageRightSmallVariant = {
 
 const imageHoverVariant = {
   initial: {},
-  whileHover: {},
+  whileHover: { transition: { staggerChildren: 0.5 } },
 };
 
 const overlayContainerVariant = {
@@ -141,7 +141,7 @@ const overlayRightHoverVariant = {
   whileHover: {
     x: "100%",
     y: "100%",
-    transition: { type: "tween", duration: 0.5, delay: 0.1 },
+    transition: { type: "tween", duration: 0.35, delay: 0.1 },
   },
 };
 const overlayLeftHoverVariant = {
@@ -149,7 +149,7 @@ const overlayLeftHoverVariant = {
   whileHover: {
     x: "-100%",
     y: "100%",
-    transition: { type: "tween", duration: 0.5, delay: 0.1 },
+    transition: { type: "tween", duration: 0.35, delay: 0.1 },
   },
 };
 
@@ -229,8 +229,14 @@ function ProjectPreview({
             {isBrowser && (
               <ProjectPortal portalId={portalId}>
                 <div
-                  className={`absolute top-8 ${
-                    isLeft ? "right-8" : "left-8"
+                  className={`absolute ${
+                    isLeft
+                      ? screenSize[0] < 1024
+                        ? "top-8 right-8"
+                        : "top-16 right-16"
+                      : screenSize[0] < 1024
+                      ? "top-8 left-8"
+                      : "top-16 left-16"
                   } flex flex-col gap-8 z-10`}
                 >
                   {githubURL && (
@@ -271,10 +277,12 @@ function ProjectPreview({
             )}
 
             <motion.div
-              className="relative w-full h-full"
+              className="relative w-full h-full group"
               variants={imageHoverVariant}
               initial="initial"
               whileHover="whileHover"
+              whileInView="whileInView"
+              viewport={{ once: true, amount: 0.8 }}
               onClick={(e) => routeChange(e, route)}
               id={portalId}
             >
@@ -288,27 +296,63 @@ function ProjectPreview({
                   isLeft
                     ? "[clip-path:polygon(0%_0%,100%_0%,100%_100%)]"
                     : "[clip-path:polygon(0%_0%,100%_0%,0%_100%)]"
-                }  bg-[#0E1E4F] opacity-75`}
+                } bg-[linear-gradient(#0E1E4f_20%,#FFFFFF)] opacity-75`}
                 variants={
                   isLeft ? overlayLeftHoverVariant : overlayRightHoverVariant
                 }
                 transition={{ type: "tween" }}
               />
-              <div
+              <motion.div
                 className={`absolute flex flex-col ${
                   isLeft ? "items-start" : "items-end"
-                } bottom-8 ${isLeft ? "left-8" : "right-8"} text-white`}
+                } ${
+                  isLeft
+                    ? screenSize[0] < 1024
+                      ? "bottom-8 left-8 origin-bottom-left"
+                      : "bottom-16 left-16 origin-bottom-left"
+                    : screenSize[0] < 1024
+                    ? "bottom-8 right-8 origin-bottom-right"
+                    : "bottom-16 right-16 origin-bottom-right"
+                } text-white `}
+                variants={{
+                  whileHover: {
+                    y: "-10%",
+                    scale: 1.1,
+                  },
+                  // whileInView: {
+                  //   y: 0,
+                  //   transition: {
+                  //     type: "spring",
+                  //     duration: 0.7,
+                  //     bounce: 0.4,
+                  //     delay: 1.05,
+                  //   },
+                  // },
+                }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
               >
                 <h2 className=" text-[40px] md:text-h2_md lg:text-h2 3xl:text-h2_xl leading-10 lg:leading-snug">
                   {title}
                 </h2>
-                <p className="mb-8 text-[20px] md:text-p_md lg:text-p 3xl:text-p_xl">
+                <p className="mb-4 text-[20px] md:text-p_md lg:text-p 3xl:text-p_xl">
                   {description}
                 </p>
-                <div className="flex justify-center items-center bg-tertiary rounded-lg p-4 3xl:p-6  text-[1rem] md:text-p_md lg:text-p 3xl:text-p_xl text-white font-bold">
+                <div className="flex justify-center items-center relative px-4 py-2 3xl:px-6 3xl:py-4 text-[1rem] md:text-p_md lg:text-p 3xl:text-[36px] mt-8 bg-tertiary text-white">
                   Learn More
+                  <motion.div
+                    className="absolute top-0 right-0 left-0 bottom-0 bg-tertiary opacity-75 group-hover:animate-buttonHover -z-10"
+                    // variants={{
+                    //   initial: { opacity: "75%" },
+                    //   whileHover: {
+                    //     opacity: 0,
+                    //     scaleX: 1.15,
+                    //     scaleY: 1.45,
+                    //   },
+                    // }}
+                    // transition={{ duration: 0.5 }}
+                  />
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           </>
         </Link>
