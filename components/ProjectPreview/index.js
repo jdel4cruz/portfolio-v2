@@ -334,23 +334,12 @@ function ProjectPreview({
                 <h2 className=" text-[40px] md:text-h2_md lg:text-h2 3xl:text-h2_xl leading-10 lg:leading-snug">
                   {title}
                 </h2>
-                <p className="mb-4 text-[20px] md:text-p_md lg:text-p 3xl:text-p_xl">
+                <p className=" text-[20px] md:text-p_md lg:text-p 3xl:text-p_xl">
                   {description}
                 </p>
-                <div className="flex justify-center items-center relative px-4 py-2 3xl:px-6 3xl:py-4 text-[1rem] md:text-p_md lg:text-p 3xl:text-[36px] mt-8 bg-tertiary text-white">
+                <div className="flex justify-center items-center relative px-4 py-2 3xl:px-6 3xl:py-4 text-[1rem] md:text-p_md lg:text-p 3xl:text-[36px] mt-8 lg:mt-12 bg-tertiary text-white">
                   Learn More
-                  <motion.div
-                    className="absolute top-0 right-0 left-0 bottom-0 bg-tertiary opacity-75 group-hover:animate-buttonHover -z-10"
-                    // variants={{
-                    //   initial: { opacity: "75%" },
-                    //   whileHover: {
-                    //     opacity: 0,
-                    //     scaleX: 1.15,
-                    //     scaleY: 1.45,
-                    //   },
-                    // }}
-                    // transition={{ duration: 0.5 }}
-                  />
+                  <motion.div className="absolute top-0 right-0 left-0 bottom-0 bg-tertiary opacity-75 group-hover:animate-buttonHover -z-10" />
                 </div>
               </motion.div>
             </motion.div>
