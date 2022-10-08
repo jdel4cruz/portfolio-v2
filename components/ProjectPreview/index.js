@@ -108,7 +108,7 @@ const imageRightSmallVariant = {
 
 const imageHoverVariant = {
   initial: {},
-  whileHover: { transition: { staggerChildren: 0.5 } },
+  whileHover: { transition: { staggerChildren: 0.25 } },
 };
 
 const overlayContainerVariant = {
@@ -318,16 +318,8 @@ function ProjectPreview({
                   whileHover: {
                     y: "-10%",
                     scale: 1.1,
+                    transition: { ease: "easeOut", duration: 0.45 },
                   },
-                  // whileInView: {
-                  //   y: 0,
-                  //   transition: {
-                  //     type: "spring",
-                  //     duration: 0.7,
-                  //     bounce: 0.4,
-                  //     delay: 1.05,
-                  //   },
-                  // },
                 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
               >

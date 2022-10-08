@@ -10,12 +10,12 @@ import usePageTransition from "../../Hooks/usePageTransition";
 
 const listVariant = {
   initial: {},
-  animate: { transition: { staggerChildren: 0.1, delayChildren: 0.25 } },
+  animate: { transition: { staggerChildren: 0.1, delayChildren: 0.35 } },
 };
 
 const itemVariant = {
   initial: { opacity: 0, y: "-50%" },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
 function NavBar({ setIsContactOpen }) {

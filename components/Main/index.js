@@ -4,15 +4,19 @@ import { motion } from "framer-motion";
 
 const mainVariant = {
   initial: {},
-  animate: { transition: { staggerChildren: 0.2 } },
+  animate: { transition: { staggerChildren: 0.6 } },
+};
+
+const mainTextSectionVariant = {
+  animate: { transition: { staggerChildren: 0.1 } },
 };
 
 const mainTextVariant = {
-  initial: { opacity: 0, x: "-10%" },
+  initial: { opacity: 0, x: "-25%" },
   animate: {
     opacity: 1,
     x: 0,
-    transition: { type: "tween", duration: 0.7, ease: "easeOut" },
+    transition: { type: "tween", duration: 1, ease: "easeOut" },
   },
 };
 
@@ -31,18 +35,28 @@ const Main = React.forwardRef((props, ref) => {
       >
         <motion.div
           className="w-full flex flex-col justify-center items-center lg:items-start"
-          variants={mainTextVariant}
+          variants={mainTextSectionVariant}
         >
-          <h1 className="text-primary_tone leading-tight">John De La Cruz</h1>
-          <h2>Front-end Developer & Designer</h2>
-          <p className="my-8 leading-loose xl:mb-16">
+          <motion.h1
+            className="text-primary_tone leading-tight"
+            variants={mainTextVariant}
+          >
+            John De La Cruz
+          </motion.h1>
+          <motion.h2 variants={mainTextVariant}>
+            Front-end Developer & Designer
+          </motion.h2>
+          <motion.p
+            className="my-8 leading-loose xl:mb-16"
+            variants={mainTextVariant}
+          >
             I focus on <strong>front-end development</strong> and{" "}
             <strong>UI/UX design</strong>, with a side of{" "}
             <strong>back-end development</strong> in order to understand how
             everything fits together. My goal is to take my{" "}
             <strong>client's visions</strong> and use my skills to make them a
             reality.
-          </p>
+          </motion.p>
         </motion.div>
         <Socials />
       </motion.div>

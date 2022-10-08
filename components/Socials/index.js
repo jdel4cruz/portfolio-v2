@@ -4,12 +4,16 @@ import { motion } from "framer-motion";
 
 const listVariant = {
   initial: {},
-  animate: { transition: { staggerChildren: 0.1, delayChildren: 0.5 } },
+  animate: { transition: { staggerChildren: 0.2, delayChildren: 0.5 } },
 };
 
 const iconVariant = {
-  initial: { opacity: 0, y: "25%" },
-  animate: { opacity: 1, y: 0, transition: { type: "tween", duration: 0.7 } },
+  initial: { opacity: 0, y: "40%" },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "tween", duration: 0.8, ease: "easeOut" },
+  },
 };
 
 function Socials() {

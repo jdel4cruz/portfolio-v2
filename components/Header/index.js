@@ -14,7 +14,7 @@ const headerVariant = {
 
 const logoVariant = {
   initial: { opacity: 0, x: "-50%" },
-  animate: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+  animate: { opacity: 1, x: 0, transition: { duration: 1, ease: "easeOut" } },
 };
 const hamburgerVariant = {
   initial: { opacity: 0, x: "50%" },
@@ -27,8 +27,8 @@ function Header({ setIsContactOpen, setIsNavMenuOpen }) {
   return (
     <>
       <motion.div
-        className={`fixed w-screen lg:w-[calc(100%-16px)]  max-h-[124px]
-       flex justify-between items-center px-8 md:px-12 lg:pr-8 py-6 bg-[rgba(255,255,255,0.1)] backdrop-blur z-40`}
+        className={`fixed w-screen lg:w-[calc(100%-16px)]  max-h-[180px]
+       flex justify-between items-center px-8 md:px-12 py-8  bg-[rgba(255,255,255,0.1)] backdrop-blur z-40`}
         variants={headerVariant}
         initial="initial"
         animate="animate"

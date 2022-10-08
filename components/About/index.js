@@ -48,31 +48,12 @@ const imageSmallVariant = {
   },
 };
 
-const techItems = [
-  "React",
-  "Tailwind",
-  "Framer Motion",
-  "Material UI",
-  "TypeScript",
-  "NodeJS",
-  "ExpressJS",
-  "WordPress",
-];
-
-const sectionListVariant = {
-  initial: { opacity: 0, y: "50%" },
-  whileInView: { opacity: 1, y: 0, transition: { duration: 0.75 } },
-};
-
-const techItem =
-  "before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-1/4 before:aspect-square before:bg-primary relative items-center tracking-tighter md:text-[20px] lg:text-[26px] 3xl:text-p_xl  text-black_75 pl-6 w-1/2 sm:w-1/4";
-
 const About = React.forwardRef((props, ref) => {
   const { screenSize } = useScreenSizeContext();
 
   return (
     <motion.div
-      className="w-screen max-w-full min-h-screen flex flex-col items-center justify-center relative gap-4 md:gap-12 3xl:gap-16 mb-16 2xl:mb-48 scroll-mt-[120px]"
+      className="w-screen max-w-full min-h-screen flex flex-col items-center justify-center relative gap-4 md:gap-12 3xl:gap-16 mb-16 2xl:mb-48 scroll-mt-[128px]"
       id="about"
       ref={ref}
       variants={sectionVariant}

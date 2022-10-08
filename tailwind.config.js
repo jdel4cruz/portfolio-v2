@@ -88,7 +88,7 @@ module.exports = {
       },
     },
     animation: {
-      buttonHover: "buttonHover .7s linear .8s",
+      buttonHover: "buttonHover .7s linear .65s",
     },
   },
   plugins: [

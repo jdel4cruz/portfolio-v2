@@ -1,9 +1,6 @@
 import { forwardRef } from "react";
 import { motion } from "framer-motion";
 import ProjectPreview from "../ProjectPreview";
-import PokeApp from "../../assets/project_imgs/PokeApp.jpg";
-import OceanSide from "../../assets/project_imgs/OceanSide.jpg";
-import Portfolio from "../../assets/project_imgs/Portfolio.jpg";
 
 const sectionTextVariant = {
   initial: { opacity: 0, y: "25%" },
@@ -17,7 +14,7 @@ const sectionTextVariant = {
 const Projects = forwardRef((props, ref) => {
   return (
     <div
-      className="w-screen max-w-full min-h-screen flex flex-col items-center pb-32 scroll-mt-[120px] xl:scroll-mt-32"
+      className="w-screen max-w-full min-h-screen flex flex-col items-center pb-32 scroll-mt-32"
       id="projects"
       ref={ref}
     >
@@ -33,7 +30,7 @@ const Projects = forwardRef((props, ref) => {
       <ul className="w-5/6 sm:w-2/3 flex flex-col items-center gap-16 3xl:gap-48 relative ">
         <ProjectPreview
           isLeft={false}
-          image={Portfolio}
+          image="/images/Portfolio_Preview.png"
           title="Portfolio"
           description="Focused on Design"
           route={`/portfolio`}
@@ -42,7 +39,7 @@ const Projects = forwardRef((props, ref) => {
         />
         <ProjectPreview
           isLeft={true}
-          image={OceanSide}
+          image="/images/OceanSide.jpg"
           title="OceanSide"
           description="A Cafe by the Sea"
           route={`/oceanside`}
@@ -52,7 +49,7 @@ const Projects = forwardRef((props, ref) => {
         />
         <ProjectPreview
           isLeft={false}
-          image={PokeApp}
+          image="/images/PokeApp.jpg"
           title="PokeApp"
           description="A Database App"
           route={`/pokeapp`}

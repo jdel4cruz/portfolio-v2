@@ -20,7 +20,7 @@ const styleColors = [
 const projectTitle = "Portfolio";
 const projectDescription = "An overview of my portfolio website";
 const projectOneLiner = "Focused On Design";
-const imgPath = "bg-[url('/images/JDCruz_Portfolio_Site3.png')]";
+const imgPath = "bg-[url('/images/Portfolio_Preview.png')]";
 
 const goalsText = [
   "Going into this project, I was happy with all the different tools I've learned to build web applications, but my designs were always lacking. And when looking at my portfolio site, it wasn’t doing its job of showing off my skills. So it was high time to redo it from the ground up.",

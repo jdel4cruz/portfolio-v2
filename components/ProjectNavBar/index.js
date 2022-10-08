@@ -38,7 +38,7 @@ function ProjectNavBar({ setIsContactOpen }) {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <a
-              className="md:text-h3_md lg:text-h3 text-white cursor-pointer"
+              className="md:text-h3_md lg:text-h3 2xl:text-h3_xl 3xl:text-[64px] text-white cursor-pointer"
               onClick={(e) => routeChange(e, process.env.NEXT_PUBLIC_ROOT_URL)}
             >
               Return Home
@@ -65,7 +65,7 @@ function ProjectNavBar({ setIsContactOpen }) {
             transition={{ duration: 0.6, delay: 0.7 }}
           >
             <a
-              className="md:text-h3_md lg:text-h3 text-white cursor-pointer"
+              className="md:text-h3_md lg:text-h3 2xl:text-h3_xl 3xl:text-[64px] text-white cursor-pointer"
               onClick={(e) =>
                 routeChange(e, `${process.env.NEXT_PUBLIC_ROOT_URL}/#projects`)
               }
@@ -88,7 +88,7 @@ function ProjectNavBar({ setIsContactOpen }) {
         whileHover="Hover"
       >
         <motion.button
-          className="md:text-h3_md lg:text-h3 text-white"
+          className="md:text-h3_md lg:text-h3 2xl:text-h3_xl 3xl:text-[64px] text-white"
           variants={linkVariant}
           initial="initial"
           animate="animate"

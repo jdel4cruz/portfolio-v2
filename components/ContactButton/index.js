@@ -8,7 +8,10 @@ function Button({ onPress, children, hasShadow, onPressParams }) {
         hasShadow && "shadow-smooth"
       }`}
       initial={{ backgroundColor: "#FEAE35", scale: 1 }}
-      whileHover={{ backgroundColor: "#16308C", scale: 1.1 }}
+      whileHover={{
+        backgroundColor: "#16308C",
+        scale: 1.1,
+      }}
       onClick={() => onPress(onPressParams)}
     >
       {children}
